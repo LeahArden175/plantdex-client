@@ -4,8 +4,8 @@ import './Header.css';
 export default class Header extends Component {
     render () {
         return (
-            <div>
-                <h2>HEADER</h2>
+            <div className="header-div">
+                <h1 className="header">Welcome to Plant-Dex</h1>
             </div>
         )
     }s
