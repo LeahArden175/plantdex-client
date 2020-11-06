@@ -5,6 +5,9 @@ export default class SearchBar extends Component {
   render() {
     return (
       <div className="search-form-div">
+        <button class="add-new-button">
+            Add a new plant!
+          </button>
         <form class="search-form">
           <label for="searchType">Search Here</label>
           <input type="text" />
@@ -21,5 +24,4 @@ export default class SearchBar extends Component {
       </div>
     );
   }
-  s;
 }
