@@ -8,5 +8,5 @@ export default class Header extends Component {
                 <h1 className="header">Welcome to Plant-Dex</h1>
             </div>
         )
-    }s
+    }
 }
