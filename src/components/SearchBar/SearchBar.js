@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./SearchBar.css";
+import Filters from "../Filters/Filters";
 
 export default class SearchBar extends Component {
   render() {
@@ -12,11 +13,7 @@ export default class SearchBar extends Component {
           <label for="searchType">Search Here</label>
           <input type="text" />
           <label>Choose a search type:</label>
-          <select id="plantSearch">
-            <option>Nickname</option>
-            <option>Store</option>
-            <option>Scientific Name</option>
-          </select>
+          <Filters />
           <button class="submit-button" type="submit">
             Submit
           </button>
