@@ -1,15 +1,21 @@
-.landing-page-div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin:auto;
+.landing-page-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
 }
 
-.landing-page-info-div{
-    background-color: rgb(169, 163, 163);
+.landing-page-info-div {
+  background-color: rgb(169, 163, 163);
 }
-.landing-page-info{
-    color:  black;
+.landing-page-info {
+  color: black;
+}
+
+.landing-page-button {
+  width: 30%;
+  margin: auto;
+  margin-top: 15px;
 }

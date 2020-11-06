@@ -14,8 +14,8 @@ export default class LandingPage extends Component {
                 <div>
                     <h4>Log your plants and keep track of their growth!</h4>
                     <p>Get Started!</p>
+                    <LoginForm />
                 </div>
-                <LoginForm />
             </div>
         )
     }
