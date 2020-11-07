@@ -5,7 +5,9 @@ export default class PlantItem extends Component {
     render () {
         
         return (
-            <div>Plant Item goes here</div>
+            <div>
+                PLANT GOES HERE
+            </div>
         )
     }
 }

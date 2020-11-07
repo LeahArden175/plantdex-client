@@ -1,26 +1,22 @@
 import React, { Component } from "react";
 import "./PlantList.css";
+import PlantBlock from "../PlantBlock/PlantBlock";
 
-export default class Plant extends Component {
+export default class PlantList extends Component {
   render() {
+    console.log(this.props);
 
-    
-
-    return (
-      <div>
-        <div className="list">
-          <h3>Cactus from "Lowes"</h3>
-          <button>See Plant Info!</button>
-        </div>
-        <div className="list">
-          <h3>UFO Plant from "Urban Jungle"</h3>
-          <button>See Plant Info!</button>
-        </div>
-        <div className="list">
-          <h3>Pothos from "Father Natures"</h3>
-          <button>See Plant Info!</button>
-        </div>
-      </div>
-    );
+    const getPlants = this.props.plantInfo.map((plant, index) => (
+      <PlantBlock
+        key={index}
+        id={plant.id}
+        scientificName={plant.scientificName}
+        nickName={plant.nickName}
+        datePurchased={plant.datePurchased}
+        purchasePlace={plant.purchasePlace}
+        picture={plant.picture}
+      />
+    ))
+    return <div>{getPlants}</div>;
   }
 }

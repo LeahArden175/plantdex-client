@@ -1,9 +1,0 @@
-.list {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    margin: auto;
-    border: solid;
-    background-color: rgb(201, 196, 176);
-    margin-bottom: 30px;
-  }

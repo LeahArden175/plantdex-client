@@ -4,6 +4,7 @@ import PlantItem from '../../components/PlantItem/PlantItem'
 
 const plantInfo = [
     {
+      id: 1,
       nickName: 'UFO Plant',
       scientificName: 'Pilea Peperomiodes',
       datePurchased: '2020-20-08',
@@ -11,6 +12,7 @@ const plantInfo = [
       picture: 'https://cdn11.bigcommerce.com/s-uemzj79jf9/images/stencil/2048x2048/products/1318/3781/Pilea_Peperomioides_pic1__73509.1591383605.jpg?c=2'
     },
     {
+      id: 2,
       nickName: 'Musaica',
       scientificName: 'Calathea Musaica',
       datePurchased: '2020-20-08',
