@@ -5,9 +5,10 @@ export default class Filters extends Component {
   render() {
     return (
       <select id="plantSearch">
-        <option>Nickname</option>
-        <option>Store</option>
-        <option>Scientific Name</option>
+        <option value="">No Filter</option>
+        <option value='nickName'>Nickname</option>
+        <option value='purchasePlace'>Store</option>
+        <option value="scientificName">Scientific Name</option>
       </select>
     );
   }
