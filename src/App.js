@@ -7,6 +7,7 @@ import AddPlant from './MainPages/AddPlant/AddPlant'
 import PlantListPage from './MainPages/PlantListPage/PlantListPage'
 import NewUserPage from './MainPages/NewUserPage/NewUserPage'
 import PlantPage from './MainPages/PlantPage/PlantPage'
+import UpdatePage from './MainPages/UpdatePage/UpdatePage';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Route exact path='/plant-list' component={PlantListPage} />
       <Route exact path='/sign-up' component={NewUserPage} />
       <Route exact path='/plant' component={PlantPage} />
+      <Route exact path='/update' component={UpdatePage} />
     </div>
   );
 }
