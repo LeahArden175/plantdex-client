@@ -11,12 +11,12 @@ export default class SearchBar extends Component {
          to='/add-plant'>
            Add a new plant!
          </Link>
-        <form class="search-form">
-          <label for="searchType">Search Here</label>
+        <form className="search-form">
+          <label htmlFor="searchType">Search Here</label>
           <input type="text" />
           <label>Choose a search type:</label>
           <Filters />
-          <button class="submit-button" type="submit">
+          <button className="submit-button" type="submit">
             Submit
           </button>
         </form>

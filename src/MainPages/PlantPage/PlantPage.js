@@ -1,8 +1,6 @@
-import React, { Component } from 'react'
-import './PlantList.css'
-import SearchBar from '../../components/SearchBar/SearchBar'
-import Plant from '../../components/PlantList/PlantList'
-
+import React, { Component } from 'react';
+import './PlantPage.css';
+import PlantItem from '../../components/PlantItem/PlantItem'
 
 const plantInfo = [
     {
@@ -21,12 +19,11 @@ const plantInfo = [
     }
   ]
 
-export default class PlantList extends Component {
-    render() {
+export default class PlantPage extends Component {
+    render () {
         return (
             <div>
-                <SearchBar />
-                <Plant plantInfo={plantInfo}/>
+                <PlantItem plantInfo={plantInfo}/>
             </div>
         )
     }

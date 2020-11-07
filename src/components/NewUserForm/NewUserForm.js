@@ -7,19 +7,19 @@ export default class NewUserForm extends Component {
       <div>
         <div className="loginForm-div">
           <form className="loginForm">
-            <label class="input-labels" for="username">
+            <label className="input-labels" htmlFor="username">
               Username
             </label>
-            <input class="input" type="text" placeholder="username" />
-            <label class="input-labels" for="email">
+            <input className="input" type="text" placeholder="username" />
+            <label className="input-labels" htmlFor="email">
               Email
             </label>
-            <input class="input" type="text" placeholder="Jdoe@email.com" />
-            <label class="input-labels" for="password">
+            <input className="input" type="text" placeholder="Jdoe@email.com" />
+            <label className="input-labels" htmlFor="password">
               Password
             </label>
-            <input class="input" type="text" placeholder="password" />
-            <button class="submit-button" type="submit">
+            <input className="input" type="text" placeholder="password" />
+            <button className="submit-button" type="submit">
               Sign-up!
             </button>
           </form>
