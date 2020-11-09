@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./NewUserForm.css";
+import { Link } from "react-router-dom";
 
 export default class NewUserForm extends Component {
   render() {
@@ -22,6 +23,9 @@ export default class NewUserForm extends Component {
             <button className="submit-button" type="submit">
               Sign-up!
             </button>
+            <Link to="/">
+              <button>Cancel</button>
+            </Link>
           </form>
         </div>
       </div>

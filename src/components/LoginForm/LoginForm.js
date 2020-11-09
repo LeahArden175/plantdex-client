@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './LoginForm.css';
+import { Link } from 'react-router-dom';
 
 export default class LoginForm extends Component {
     render () {
@@ -7,7 +8,7 @@ export default class LoginForm extends Component {
             <div>
         <div className="loginForm-div">
           <form className="loginForm">
-            <label className="input-labels" tmlFor="username">
+            <label className="input-labels" htmlFor="username">
               Username
             </label>
             <input className="input" type="text" placeholder="username" />
@@ -20,9 +21,12 @@ export default class LoginForm extends Component {
             </button>
             <div className='sign-up-button-div'>
             <p>Don't have an account? Sign-up</p>
-            <button className="submit-button" type="submit">
+            <Link 
+              className="submit-button" 
+              to='/sign-up'
+            >
               Here
-            </button>
+            </Link>
             </div>
           </form>
         </div>

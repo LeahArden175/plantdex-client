@@ -5,7 +5,9 @@ export default class UpdateForm extends Component {
     render () {
         return (
             <div>
-                FORM GOES HERE
+                <form>
+                    <p>HERE IS FORM??</p>
+                </form>
             </div>
         )
     }
