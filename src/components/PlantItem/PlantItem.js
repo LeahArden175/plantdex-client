@@ -6,21 +6,6 @@ export default class PlantItem extends Component {
 
   static contextType = Context;
 
-//   state ={
-//       plantInfo: []
-//   }
-
-// //   setPlant = plantInfo => {
-// //     this.setState({plantInfo})
-// //     console.log('plant',plantInfo)
-// //   }
-
-// //   componentDidMount(){
-// //     const { plantInfo=[] } = this.context;
-// //       this.setPlant(plantInfo)
-// //   }
-
-
   render() {
     const { plantInfo=[] } = this.context;
     const id = this.props.plant
