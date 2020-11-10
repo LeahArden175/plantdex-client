@@ -87,7 +87,7 @@ export default class AddPlantForm extends Component {
           <label className="input-labels" htmlFor="Date it was bought">
             Date it was bought:
           </label>
-          <input className="input" type="date/" />
+          <input className="input" type="date" />
           <label className="input-labels" htmlFor="Picture">
             Upload Picture:
           </label>

@@ -8,7 +8,7 @@ import PlantListPage from "./MainPages/PlantListPage/PlantListPage";
 import NewUserPage from "./MainPages/NewUserPage/NewUserPage";
 import PlantPage from "./MainPages/PlantPage/PlantPage";
 import UpdatePage from "./MainPages/UpdatePage/UpdatePage";
-import dummyStore from './dummyStore'
+import config from './config'
 import Context from './Context'
 
 class App extends Component {
@@ -17,14 +17,27 @@ class App extends Component {
     plantInfo: []
   }
 
+  setPlantInfo = plantInfo => {
+    this.setState({ plantInfo })
+    console.log(this.state)
+  }
+
   componentDidMount() {
-    setTimeout(() => this.setState(dummyStore), 600);
+    fetch(`${config.API_ENDPOINT}/api/plants`)
+      .then(res => {
+        if(!res.ok){
+          throw new Error(res.status)
+        }
+        return res.json()
+      })
+      .then(this.setPlantInfo)
+      .catch(error => this.setState({ error }))
   }
 
   
   render() {
     const value = {
-      plantInfo: this.state
+      plantInfo: this.state.plantInfo
     }
     return (
       <Context.Provider value={value} >
