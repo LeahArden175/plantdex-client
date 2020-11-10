@@ -14,12 +14,9 @@ import Context from './Context'
 class App extends Component {
 
   state={
-    plantInfo: []
-  }
-
-  setPlantInfo = plantInfo => {
-    this.setState({ plantInfo })
-    console.log(this.state)
+    plantInfo: [],
+    search: '',
+    filterVal: ''
   }
 
   componentDidMount() {
@@ -34,10 +31,38 @@ class App extends Component {
       .catch(error => this.setState({ error }))
   }
 
+  setPlantInfo = plantInfo => {
+    this.setState({ plantInfo })
+    console.log(this.state)
+  }
+
+  handleDeletePlant = (plantId) => {
+    this.setState({
+      plantInfo: this.state.plantInfo.filter((plant)=> plant.id !== plantId)
+    })
+  }
+
+  handleAddPlant = (plant) => {
+    this.setState({
+      plantInfo: [...this.state.plantInfo, plant]
+    })
+  }
+
+  handleFilterChange = (event) => {
+    const option = event.currentTarget.value
+    this.setState({
+      filterVal: option
+    })
+  }
+
+
   
   render() {
     const value = {
-      plantInfo: this.state.plantInfo
+      plantInfo: this.state.plantInfo,
+      deletePlant: this.handleDeletePlant,
+      AddPlant: this.handleAddPlant,
+      setPlant: this.setPlantInfo,
     }
     return (
       <Context.Provider value={value} >
