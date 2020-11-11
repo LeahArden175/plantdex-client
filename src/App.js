@@ -56,10 +56,9 @@ class App extends Component {
     })
   }
 
-  handleFilterChange = (event) => {
-    const option = event.currentTarget.value
+  handleSort = (plantInfo) => {
     this.setState({
-      filterVal: option
+      plantInfo
     })
   }
 
@@ -71,6 +70,7 @@ class App extends Component {
       deletePlant: this.handleDeletePlant,
       addPlant: this.handleAddPlant,
       setPlant: this.setPlantInfo,
+      handleSort: this.handleSort
     }
     return (
       <Context.Provider value={value} >

@@ -5,7 +5,7 @@ import "./PlantBlock.css";
 export default class PlantBlock extends Component {
 
   render() {
-    console.log(this.props)
+    //console.log(this.props)
     
     return (
       <li className='list' key="this.props.id">
