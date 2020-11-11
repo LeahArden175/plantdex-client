@@ -23,7 +23,7 @@ class App extends Component {
   componentDidMount() {
     fetch(`${config.API_ENDPOINT}/api/plants`,{
       headers: {
-        'authorization': `basic ${TokenService.getAuthToken()}`
+        'authorization': `bearer ${TokenService.getAuthToken()}`
       }
     }) 
     .then(res => {
