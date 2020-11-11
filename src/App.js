@@ -38,16 +38,19 @@ class App extends Component {
 
   setPlantInfo = plantInfo => {
     this.setState({ plantInfo })
-    console.log(this.state)
+    console.log('state', this.state)
   }
 
   handleDeletePlant = (plantId) => {
+    console.log(typeof plantId)
+    console.log(this.state.plantInfo.filter((plant)=> plant.id != plantId))
     this.setState({
-      plantInfo: this.state.plantInfo.filter((plant)=> plant.id !== plantId)
+      plantInfo: this.state.plantInfo.filter((plant)=> plant.id != plantId)
     })
   }
 
   handleAddPlant = (plant) => {
+    console.log(plant)
     this.setState({
       plantInfo: [...this.state.plantInfo, plant]
     })
@@ -66,7 +69,7 @@ class App extends Component {
     const value = {
       plantInfo: this.state.plantInfo,
       deletePlant: this.handleDeletePlant,
-      AddPlant: this.handleAddPlant,
+      addPlant: this.handleAddPlant,
       setPlant: this.setPlantInfo,
     }
     return (

@@ -6,6 +6,7 @@ import Context from "../../Context";
 import TokenService from "../../services/token-service";
 
 export default class AddPlantForm extends Component {
+
 static contextType = Context
 
   state ={
@@ -42,9 +43,10 @@ static contextType = Context
       }
       return response.json()
     })
-    .then((data) =>{
+    .then(data =>{
+      console.log(data)
       this.context.addPlant(data);
-      this.props.history.push(`/plant/${data.id}`)
+      this.props.history.push('/plant-list')
     })
     .catch(err => this.setState({error: err.message}))
   }

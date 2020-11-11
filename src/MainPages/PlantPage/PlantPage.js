@@ -12,11 +12,13 @@ export default class PlantPage extends Component {
     static contextType = Context
   
     render () {
+        console.log(this.props)
       const plant = this.props.match.params.id
       const plantInfo = this.context
+      const history =  this.props.history
         return (
             <div>
-                <PlantItem plant={plant} plantInfo={plantInfo}/>
+                <PlantItem plant={plant} plantInfo={plantInfo} history={history}/>
             </div>
         )
     }

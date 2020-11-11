@@ -14,6 +14,9 @@ export default class Header extends Component {
         <Link onClick={this.handleLogoutClick} to="/">
           Logout
         </Link>
+        <Link to='/plant-list'>
+        Your Plants!
+        </Link>
       </div>
     );
   }
