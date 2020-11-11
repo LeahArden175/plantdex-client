@@ -3,6 +3,7 @@ import "./AddPlantForm.css";
 import { Link } from "react-router-dom";
 import config from '../../config'
 import Context from "../../Context";
+import TokenService from "../../services/token-service";
 
 export default class AddPlantForm extends Component {
 static contextType = Context
@@ -31,6 +32,7 @@ static contextType = Context
       method: 'POST',
       headers: {
         'content-type': 'application/json',
+        'authorization': `basic ${TokenService.getAuthToken()}`
       },
       body: JSON.stringify(newPlant)
     })

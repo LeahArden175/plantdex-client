@@ -10,6 +10,7 @@ import PlantPage from "./MainPages/PlantPage/PlantPage";
 import UpdatePage from "./MainPages/UpdatePage/UpdatePage";
 import config from './config'
 import Context from './Context'
+import TokenService from "./services/token-service";
 
 class App extends Component {
 
@@ -20,15 +21,19 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch(`${config.API_ENDPOINT}/api/plants`)
-      .then(res => {
-        if(!res.ok){
-          throw new Error(res.status)
-        }
-        return res.json()
-      })
-      .then(this.setPlantInfo)
-      .catch(error => this.setState({ error }))
+    fetch(`${config.API_ENDPOINT}/api/plants`,{
+      headers: {
+        'authorization': `basic ${TokenService.getAuthToken()}`
+      }
+    }) 
+    .then(res => {
+      if(!res.ok){
+        throw new Error(res.status)
+      }
+      return res.json()
+    })
+    .then(this.setPlantInfo)
+    .catch(error => this.setState({ error }))
   }
 
   setPlantInfo = plantInfo => {
