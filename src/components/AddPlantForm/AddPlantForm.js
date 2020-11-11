@@ -53,7 +53,7 @@ static contextType = Context
 
 
 
-  nameChanged(scientificname) {
+  scientificNameChanged(scientificname) {
     this.setState({
       scientificname
     })
@@ -96,7 +96,7 @@ static contextType = Context
             name="scientificname"
             placeholder="ex: Pilea Peperomioides"
             value={this.state.scientificname}
-            onChange={e => this.nameChanged(e.target.value)}
+            onChange={e => this.scientificNameChanged(e.target.value)}
           />
           <label className="input-labels" htmlFor="nickname">
             Nickname:

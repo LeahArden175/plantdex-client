@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import moment from 'moment'
 import {Link} from 'react-router-dom';
 import "./PlantItem.css";
 import Context from "../../Context";
@@ -42,23 +43,26 @@ export default class PlantItem extends Component {
   render() {
     const { plantInfo=[] } = this.context;
     const id = this.props.plant
-    console.log("plantInfo is typeof:", typeof plantInfo);
-    console.log("id:", id, "plantInfo:", plantInfo);
-    console.log(1)
     const findPlant = plantInfo && plantInfo.find((plant) => plant.id == id);
-    console.log("findPlant:", typeof findPlant);
 
     if(!findPlant){
         return 'loading'
     }
 
+    console.log('props', this.props)
+
+    const formattedDate = moment(findPlant.datepurchased).format("MMM Do YY")
+
     return (
-      <div>
+      <div className='plant-item-div'>
         {/* <img className="image" alt="Plant" src={findPlant.picture} /> */}
-        <p>{findPlant.nickname}</p>
-        <p>{findPlant.datepurchased}</p>
-        <p>{findPlant.purchaseplace}</p>
+        <h2>{findPlant.nickname}</h2>
         <p>{findPlant.scientificname}</p>
+        <p>Adopted: {formattedDate}</p>
+        <p>{findPlant.purchaseplace}</p>
+        <Link to={`/update/${this.props.plant}`}>
+        <button>Edit Plant</button>
+        </Link>
         <button type="button" onClick={this.handleDeletePlant}>DELETE</button>
       </div>
     );

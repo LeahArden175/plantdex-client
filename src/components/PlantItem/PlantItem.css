@@ -1,0 +1,11 @@
+.plant-item-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: solid;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: white;
+}

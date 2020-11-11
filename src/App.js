@@ -42,8 +42,6 @@ class App extends Component {
   }
 
   handleDeletePlant = (plantId) => {
-    console.log(typeof plantId)
-    console.log(this.state.plantInfo.filter((plant)=> plant.id != plantId))
     this.setState({
       plantInfo: this.state.plantInfo.filter((plant)=> plant.id != plantId)
     })
@@ -56,13 +54,17 @@ class App extends Component {
     })
   }
 
+  handleEditPlant = (plant) =>{
+    this.setState({
+      plantInfo: [...this.state.plantInfo, plant]
+    })
+  }
+
   handleSort = (plantInfo) => {
     this.setState({
       plantInfo
     })
   }
-
-
   
   render() {
     const value = {
@@ -70,7 +72,8 @@ class App extends Component {
       deletePlant: this.handleDeletePlant,
       addPlant: this.handleAddPlant,
       setPlant: this.setPlantInfo,
-      handleSort: this.handleSort
+      handleSort: this.handleSort,
+      handleEdit: this.handleEditPlant 
     }
     return (
       <Context.Provider value={value} >
@@ -81,7 +84,7 @@ class App extends Component {
         <Route exact path="/plant-list" component={PlantListPage} />
         <Route exact path="/sign-up" component={NewUserPage} />
         <Route exact path="/plant/:id" component={PlantPage} />
-        <Route exact path="/update" component={UpdatePage} />
+        <Route exact path="/update/:id" component={UpdatePage} />
       </div>
       </Context.Provider>
     );
