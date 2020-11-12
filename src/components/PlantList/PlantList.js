@@ -20,8 +20,7 @@ export default class PlantList extends Component {
   };
 
   render() {
-    console.log("before sort", this.context.plantInfo);
-
+    
     const getPlants = this.props.plantInfo.map((plant, index) => (
       <PlantBlock
         key={index}

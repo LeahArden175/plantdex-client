@@ -12,7 +12,6 @@ export default class PlantPage extends Component {
     static contextType = Context
   
     render () {
-        console.log(this.props)
       const plant = this.props.match.params.id
       const plantInfo = this.context
       const history =  this.props.history
