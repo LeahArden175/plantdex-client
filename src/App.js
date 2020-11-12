@@ -55,8 +55,14 @@ class App extends Component {
   }
 
   handleEditPlant = (plant) =>{
+    const newPlants = this.state.plantInfo.map(statePlant => {
+      if(statePlant.id=== plant.id){
+        return plant
+      }
+      return statePlant
+    })
     this.setState({
-      plantInfo: [...this.state.plantInfo, plant]
+      plantInfo: newPlants
     })
   }
 
@@ -73,7 +79,7 @@ class App extends Component {
       addPlant: this.handleAddPlant,
       setPlant: this.setPlantInfo,
       handleSort: this.handleSort,
-      handleEdit: this.handleEditPlant 
+      editPlant: this.handleEditPlant 
     }
     return (
       <Context.Provider value={value} >
