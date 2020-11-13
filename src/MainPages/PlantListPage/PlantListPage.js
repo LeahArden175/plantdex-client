@@ -7,8 +7,14 @@ import Context from '../../Context'
 export default class PlantListPage extends Component {
 
   static contextType = Context
+
+  componentDidMount () {
+    this.context.setPlant()
+  }
+  
     render() {
       const {plantInfo} = this.context
+      console.log(plantInfo)
         return (
             <div>
                 {/* <SearchBar plantInfo={plantInfo}/> */}

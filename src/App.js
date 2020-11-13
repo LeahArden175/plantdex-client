@@ -16,11 +16,9 @@ class App extends Component {
 
   state={
     plantInfo: [],
-    search: '',
-    filterVal: ''
   }
 
-  componentDidMount() {
+  fetchPlant = () => {
     fetch(`${config.API_ENDPOINT}/api/plants`,{
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`
@@ -79,7 +77,8 @@ class App extends Component {
       addPlant: this.handleAddPlant,
       setPlant: this.setPlantInfo,
       handleSort: this.handleSort,
-      editPlant: this.handleEditPlant 
+      editPlant: this.handleEditPlant,
+      fetchPlant : this.fetchPlant 
     }
     return (
       <Context.Provider value={value} >

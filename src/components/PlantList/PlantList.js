@@ -4,24 +4,27 @@ import PlantBlock from "../PlantBlock/PlantBlock";
 import { Link } from "react-router-dom";
 import Context from "../../Context";
 
+
+
 export default class PlantList extends Component {
-  state = {
-    plantInfo: [],
-  };
+  // state = {
+  //   plantInfo: [],
+  // };
 
   static contextType = Context;
 
   toggleSort = (event) => {
     event.preventDefault();
-    const plantInfo = this.context.plantInfo;
+    console.log(this.context)
+    const plantInfo = this.state.plantInfo;
     plantInfo.sort((a, b) => a.nickname.localeCompare(b.nickname));
-    this.setState({ plantInfo });
+    this.context.plantInfo({ plantInfo });
     this.context.handleSort(plantInfo)
   };
 
   render() {
     
-    const getPlants = this.props.plantInfo.map((plant, index) => (
+    const getPlants = this.context.plantInfo.map((plant, index) => (
       <PlantBlock
         key={index}
         id={plant.id}

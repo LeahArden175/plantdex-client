@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import "./LandingPage.css";
 import LoginForm from "../../components/LoginForm/LoginForm";
+import Context from "../../Context";
 
 export default class LandingPage extends Component {
+  
   static defaultProps = {
     location: {},
     history: {
@@ -11,8 +13,9 @@ export default class LandingPage extends Component {
   };
 
   handleLoginSuccess = () => {
+    console.log(this.context)
     const { location, history } = this.props;
-    const destination = (location.state || {}).from || "/";
+    const destination = (location.state || {}).from || "/plant-list";
     history.push(destination);
   };
 
