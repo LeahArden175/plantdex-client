@@ -8,7 +8,7 @@ export default class PlantBlock extends Component {
     //console.log(this.props)
     
     return (
-      <li className='list' key="this.props.id">
+      <li className='list-items' key="this.props.id">
         {/* <img className="image" alt="Plant" src={this.props.picture} /> */}
         <Link 
             className='plant-link'

@@ -35,15 +35,17 @@ export default class PlantList extends Component {
     return (
       <div>
         <div className="search-form-div">
-          <p>You have {this.context.plantInfo.length} plants!</p>
+          <h3>You have {this.context.plantInfo.length} amazing plants!</h3>
+          <p>Sort By: </p>
           <form className="search-form" onSubmit={this.handleSearch}>
-            <p>Sort By: </p>
             <button>All</button>
             <button onClick={this.toggleSort} >Alphabetically</button>
             <Link to="/add-plant" className="add-new-button" className="link">Add a new plant!</Link>
           </form>
         </div>
+        <div className="items">
         {getPlants}
+        </div>
       </div>
     );
   }

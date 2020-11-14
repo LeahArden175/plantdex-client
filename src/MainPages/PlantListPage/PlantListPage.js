@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './PlantListPage.css'
-import SearchBar from '../../components/SearchBar/SearchBar'
 import PlantList from '../../components/PlantList/PlantList'
 import Context from '../../Context'
 
@@ -16,8 +15,7 @@ export default class PlantListPage extends Component {
       const {plantInfo} = this.context
       console.log(plantInfo)
         return (
-            <div>
-                {/* <SearchBar plantInfo={plantInfo}/> */}
+            <div className="plant-list">
                 <PlantList plantInfo={plantInfo}/>
             </div>
         )

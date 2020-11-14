@@ -1,6 +1,5 @@
-.list {
+.list-items {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 70%;
@@ -11,7 +10,7 @@
     margin-bottom: 30px;
     font-family: 'Merienda', cursive;
   }
-  
+
   h2{
     font-family: 'Chewy', cursive;
   }

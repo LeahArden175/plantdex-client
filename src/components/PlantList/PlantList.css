@@ -8,7 +8,7 @@
   
   .search-form  {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     padding: 20px;
     background-color: #F0DCCA;
     color: black;
@@ -16,6 +16,7 @@
     margin: auto;
     margin-bottom: 40px;
   }
+
   .search-form button {
 	box-shadow:inset 0px 0px 14px -3px #f2fadc;
 	background:linear-gradient(to bottom, #dbe6c4 5%, #9ba892 100%);
@@ -50,7 +51,18 @@
     font-family: 'Merienda', cursive;
   }
 
+  h3{
+    font-family: 'Merienda', cursive;
+    font-size: 25px;
+    font-weight: 500;
+  }
+
   .link{
     font-family: 'Merienda', cursive;
+  }
+
+  .items{
+    display: flex;
+    flex-wrap: wrap;
   }
   
