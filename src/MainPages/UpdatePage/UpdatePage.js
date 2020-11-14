@@ -10,6 +10,10 @@ export default class UpdatePage extends Component {
 
     static contextType = Context
 
+    componentDidMount () {
+        this.context.fetchPlant()
+      }
+
     render () {
         const plant = this.props.match.params.id
         const plantInfo = this.context

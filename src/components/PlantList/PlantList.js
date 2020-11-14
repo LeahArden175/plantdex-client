@@ -7,18 +7,17 @@ import Context from "../../Context";
 
 
 export default class PlantList extends Component {
-  // state = {
-  //   plantInfo: [],
-  // };
+  state = {
+    plantInfo: [],
+  };
 
   static contextType = Context;
 
   toggleSort = (event) => {
     event.preventDefault();
-    console.log(this.context)
-    const plantInfo = this.state.plantInfo;
+    const plantInfo = this.context.plantInfo;
     plantInfo.sort((a, b) => a.nickname.localeCompare(b.nickname));
-    this.context.plantInfo({ plantInfo });
+    this.context.setPlant({ plantInfo });
     this.context.handleSort(plantInfo)
   };
 

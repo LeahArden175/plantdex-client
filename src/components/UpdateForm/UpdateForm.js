@@ -40,7 +40,7 @@ export default class UpdateForm extends Component {
     .then(data => {
       console.log('data', data)
       console.log(this.props)
-      console.log(this.context)
+      console.log('context:', this.context)
       this.context.editPlant(data)
       this.props.history.push(`/plant/${data.id}`)
     })

@@ -54,7 +54,7 @@ class App extends Component {
 
   handleEditPlant = (plant) =>{
     const newPlants = this.state.plantInfo.map(statePlant => {
-      if(statePlant.id=== plant.id){
+      if(statePlant.id === plant.id){
         return plant
       }
       return statePlant

@@ -9,7 +9,7 @@ export default class PlantListPage extends Component {
   static contextType = Context
 
   componentDidMount () {
-    this.context.setPlant()
+    this.context.fetchPlant()
   }
   
     render() {

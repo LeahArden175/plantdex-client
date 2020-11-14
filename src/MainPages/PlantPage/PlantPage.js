@@ -9,6 +9,10 @@ export default class PlantPage extends Component {
         plant: []
     }
 
+    componentDidMount () {
+        this.context.fetchPlant()
+      }
+
     static contextType = Context
   
     render () {
