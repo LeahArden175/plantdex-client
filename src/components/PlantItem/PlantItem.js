@@ -55,6 +55,9 @@ export default class PlantItem extends Component {
 
     return (
       <div className='plant-item-div'>
+        <Link to='/plant-list' className="link">
+        Your Plants!
+        </Link>
         {/* <img className="image" alt="Plant" src={findPlant.picture} /> */}
         <h2>{findPlant.nickname}</h2>
         <p>{findPlant.scientificname}</p>

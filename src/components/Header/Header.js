@@ -11,11 +11,8 @@ export default class Header extends Component {
   renderLogoutLink() {
     return (
       <div className="Header__logged-in">
-        <Link onClick={this.handleLogoutClick} to="/">
+        <Link onClick={this.handleLogoutClick} to="/" className="link">
           Logout
-        </Link>
-        <Link to='/plant-list'>
-        Your Plants!
         </Link>
       </div>
     );
@@ -24,9 +21,9 @@ export default class Header extends Component {
   renderLoginLink() {
     return (
       <div className="Header__not-logged-in">
-        <Link to="/register">Register</Link>
+        <Link to="/register" className="link">Register</Link>
         <span className='Hyph'>{' - '}</span>
-        <Link to="/login">Log in</Link>
+        <Link to="/login" className="link">Log in</Link>
       </div>
     );
   }

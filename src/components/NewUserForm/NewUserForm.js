@@ -19,7 +19,7 @@ export default class NewUserForm extends Component {
             <label className="input-labels" htmlFor="password">
               Password
             </label>
-            <input className="input" type="text" placeholder="password" />
+            <input className="input" type="password" placeholder="password" />
             <button className="submit-button" type="submit">
               Sign-up!
             </button>

@@ -4,8 +4,6 @@ import PlantBlock from "../PlantBlock/PlantBlock";
 import { Link } from "react-router-dom";
 import Context from "../../Context";
 
-
-
 export default class PlantList extends Component {
   state = {
     plantInfo: [],
@@ -18,11 +16,10 @@ export default class PlantList extends Component {
     const plantInfo = this.context.plantInfo;
     plantInfo.sort((a, b) => a.nickname.localeCompare(b.nickname));
     this.context.setPlant({ plantInfo });
-    this.context.handleSort(plantInfo)
+    this.context.handleSort(plantInfo);
   };
 
   render() {
-    
     const getPlants = this.context.plantInfo.map((plant, index) => (
       <PlantBlock
         key={index}
@@ -38,11 +35,12 @@ export default class PlantList extends Component {
     return (
       <div>
         <div className="search-form-div">
-          <Link to="/add-plant">Add a new plant!</Link>
+          <p>You have {this.context.plantInfo.length} plants!</p>
           <form className="search-form" onSubmit={this.handleSearch}>
-            <p>Sort By</p>
+            <p>Sort By: </p>
             <button>All</button>
-            <button onClick={this.toggleSort}>Alphabetically</button>
+            <button onClick={this.toggleSort} >Alphabetically</button>
+            <Link to="/add-plant" className="add-new-button" className="link">Add a new plant!</Link>
           </form>
         </div>
         {getPlants}
