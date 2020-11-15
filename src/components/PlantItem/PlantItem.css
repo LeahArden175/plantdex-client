@@ -2,10 +2,25 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+    /* align-items: center;
+    text-align: center; */
     border: solid;
     padding: 20px;
+    margin: 20px;
     margin-top: 40px;
     background-color: #8D9F87;
+    border-radius:15px;
+}
+
+.plant-item{
+    text-align: center;
+    padding: 20px
+}
+
+.button-div{
+    display: flex;
+    justify-content: space-between;
+}
+.plant-item-buttons{
+    justify-content: space-between;
 }
