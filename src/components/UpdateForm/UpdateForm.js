@@ -151,9 +151,9 @@ export default class UpdateForm extends Component {
             onChange={(e) => this.scientificNameChanged(e.target.value)}
           />
           <div className="edit-form-buttons">
-            <button type="submit">Submit</button>
-            <button>
-              <Link className="link" to={`/plant/${this.props.plant}`}>Cancel</Link>
+            <button className="edit-buttons" type="submit">Submit</button>
+            <button className="edit-buttons">
+              <Link className="edit-link-button" to={`/plant/${this.props.plant}`}>Cancel</Link>
               </button>
           </div>
         </form>

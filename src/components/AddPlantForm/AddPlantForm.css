@@ -38,13 +38,26 @@
   justify-content: space-between;
 }
 .submit-button {
-  margin: auto;
-  margin-top: 30px;
+  box-shadow: inset 0px 0px 14px -3px #b5b8ae;
+  background: linear-gradient(to bottom, #3c3d41 5%, #3c3d41 100%);
+  background-color: #3c3d41;
+  border-radius: 6px;
+  border: 1px solid #b2b8ad;
+  display: inline-block;
+  cursor: pointer;
+  color: #a0b09b;
   font-family: "Merienda", cursive;
+  font-size: 15px;
+  font-weight: bold;
+  margin: auto;
+  /* margin-left: 10px; */
+  height: 35px;
+  padding: 10px;
   text-decoration: none;
-  color: black;
+  text-shadow: 0px 1px 0px #3c3d41;
 }
+
 .cancel-link{
   text-decoration: none;
-  color: black;
+  color: #a0b09b;
 }

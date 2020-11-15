@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './PlantListPage.css'
 import PlantList from '../../components/PlantList/PlantList'
+import TokenService from '../../services/token-service'
+import LandingPage from '../LandingPage/LandingPage'
 import Context from '../../Context'
 
 export default class PlantListPage extends Component {
@@ -10,13 +12,33 @@ export default class PlantListPage extends Component {
   componentDidMount () {
     this.context.fetchPlant()
   }
+
+  renderPlantListPage() {
+    const {plantInfo} = this.context
+      console.log(plantInfo)
+    return (
+    <PlantList plantInfo={plantInfo}/>
+    )
+  }
+
+  renderLandingPage() {
+    return (
+        <LandingPage />
+    )
+
+  }
+  
   
     render() {
       const {plantInfo} = this.context
       console.log(plantInfo)
         return (
             <div className="plant-list">
-                <PlantList plantInfo={plantInfo}/>
+              {TokenService.hasAuthToken()
+                ? this.renderPlantListPage()
+                : this.renderLandingPage()
+                }
+                {/* <PlantList plantInfo={plantInfo}/> */}
             </div>
         )
     }

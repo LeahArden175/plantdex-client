@@ -1,44 +1,66 @@
-.edit-plant-div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: solid;
-    padding: 20px;
-    margin: 20px;
-    margin-top: 40px;
-    background-color: #8D9F87;
-    border-radius:15px;
-    text-align: left;
+.edit-plant-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: solid;
+  padding: 20px;
+  margin: 20px;
+  margin-top: 40px;
+  background-color: #8d9f87;
+  border-radius: 15px;
+  text-align: left;
 }
 
-.edit-input{
-    display: flex;
-    font-size: 15px;
-    width: 100%;
-    background: transparent;
-    border: none;
-    border-bottom: solid;
-    font-family: 'Merienda', cursive;
+.edit-input {
+  display: flex;
+  font-size: 15px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: solid;
+  font-family: "Merienda", cursive;
 }
-.plant-item-buttons{
-    justify-content: space-between;
-}
-
-h2{
-    font-family: "Chewy", cursive;
+.plant-item-buttons {
+  justify-content: space-between;
 }
 
-.edit-plant-p{
-    font-family: "Chewy", cursive;
-    font-size: 18px;
+h2 {
+  font-family: "Chewy", cursive;
 }
 
-.edit-form-buttons{
-    display: flex;
-    justify-content: space-between;
-    margin-top:10px;
+.edit-plant-p {
+  font-family: "Chewy", cursive;
+  font-size: 18px;
 }
 
+.edit-form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.edit-buttons {
+  box-shadow: inset 0px 0px 14px -3px #b5b8ae;
+  background: linear-gradient(to bottom, #3c3d41 5%, #3c3d41 100%);
+  background-color: #3c3d41;
+  border-radius: 6px;
+  border: 1px solid #b2b8ad;
+  display: inline-block;
+  cursor: pointer;
+  color: #a0b09b;
+  font-family: "Merienda", cursive;
+  font-size: 15px;
+  font-weight: bold;
+  /* margin: auto; */
+  /* margin-left: 10px; */
+  height: 35px;
+  padding: 10px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #3c3d41;
+}
 
+.edit-link-button {
+  text-decoration: none;
+  color: #a0b09b;
+}
