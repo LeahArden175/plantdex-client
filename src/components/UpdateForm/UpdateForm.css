@@ -1,0 +1,44 @@
+.edit-plant-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: solid;
+    padding: 20px;
+    margin: 20px;
+    margin-top: 40px;
+    background-color: #8D9F87;
+    border-radius:15px;
+    text-align: left;
+}
+
+.edit-input{
+    display: flex;
+    font-size: 15px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: solid;
+    font-family: 'Merienda', cursive;
+}
+.plant-item-buttons{
+    justify-content: space-between;
+}
+
+h2{
+    font-family: "Chewy", cursive;
+}
+
+.edit-plant-p{
+    font-family: "Chewy", cursive;
+    font-size: 18px;
+}
+
+.edit-form-buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top:10px;
+}
+
+

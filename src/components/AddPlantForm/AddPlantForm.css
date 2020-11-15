@@ -1,22 +1,26 @@
 .add-plant-form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  text-align: center;
   border: solid;
   padding: 20px;
-  background-color: rgb(102, 110, 108);
-  color: white;
-  width: 70%;
-  margin: auto;
-  font-family: 'Merienda', cursive;
-
+  margin: 20px;
+  margin-top: 40px;
+  background-color: #8d9f87;
+  border-radius: 15px;
+  text-align: left;
 }
 .add-plant-form-div {
+  display: flex;
+  flex-direction: column;
   align-content: center;
   justify-items: center;
   text-align: center;
-  display: block;
+  /* display: block; */
   margin: auto;
-  font-family: 'Merienda', cursive;
+  font-family: "Merienda", cursive;
 }
 .input {
   width: 50%;
@@ -25,12 +29,22 @@
 
 .input-labels {
   padding-top: 10px;
-  font-family: 'Merienda', cursive;
+  font-family: "Merienda", cursive;
+  text-align: center;
 }
-
+.add-plant-button-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .submit-button {
-  width: 30%;
   margin: auto;
   margin-top: 30px;
-  font-family: 'Merienda', cursive;
+  font-family: "Merienda", cursive;
+  text-decoration: none;
+  color: black;
+}
+.cancel-link{
+  text-decoration: none;
+  color: black;
 }

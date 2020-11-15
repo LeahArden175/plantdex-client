@@ -36,7 +36,7 @@ export default class Header extends Component {
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
           : this.renderLoginLink()}
-        <h1 className="header">Welcome to Plant-Dex</h1>
+        {/* <h1 className="header">Welcome to Plant-Dex</h1> */}
       </div>
     );
   }
