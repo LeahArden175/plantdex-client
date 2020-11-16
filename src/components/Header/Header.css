@@ -48,7 +48,7 @@
     .Header__logged-in{
         display: flex;
         font-family: 'Merienda', cursive;
-        justify-content: space-between;
+        justify-content: center;
         /* background-color: black; */
     }
     .Header__not-logged-in{
@@ -60,6 +60,7 @@
     
     .link{
         text-decoration: none;
+        margin: 15px 30px;
         color: rgb(83, 79, 79);
     }
 }

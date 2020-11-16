@@ -121,7 +121,7 @@ export default class UpdateForm extends Component {
     }
     return (
       <div className="edit-plant-div">
-        <form onSubmit={this.handleEditPlant}>
+        <form className="edit-form" onSubmit={this.handleEditPlant}>
           <h4 className="edit-plant-p">Nickname:</h4>
           <input
             className="edit-input"
