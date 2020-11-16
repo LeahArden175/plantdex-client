@@ -62,12 +62,12 @@ export default class LoginForm extends Component {
               type="password" 
               placeholder="password" 
             />
-            <button className="submit-button" type="submit">
+            <button className="login-page-buttons" type="submit">
               Sign-in!
             </button>
             <div className="sign-up-button-div">
-              <p>Don't have an account? Sign-up</p>
-              <Link className="submit-button" to="/sign-up">
+              <p className="sign-up-p">Don't have an account? Sign-up</p>
+              <Link className="login-page-buttons" to="/sign-up">
                 Here
               </Link>
             </div>

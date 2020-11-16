@@ -1,4 +1,4 @@
-.list-items {
+/* .list-items {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,4 +24,36 @@
 a.plant-link:hover{
     color: rgb(130, 94, 100);
     cursor: pointer;
+} */
+
+/*-----GROUPS AND ITEMS (DESKTOP)-----*/
+
+@media all and (min-width: 800px) {
+  .list-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    margin: auto;
+    border: solid #696d7d;
+    border-radius: 15px;
+    background-color: #8d9f87;
+    margin-bottom: 30px;
+    font-family: "Chewy", cursive;
+  }
+
+  .image {
+    width: 200px;
+  }
+
+  .plant-link {
+    text-decoration: none;
+    color: black;
+  }
+
+  a.plant-link:hover {
+    color: rgb(130, 94, 100);
+    cursor: pointer;
+  }
 }

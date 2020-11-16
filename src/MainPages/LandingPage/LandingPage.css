@@ -12,13 +12,55 @@
 .landing-page-info-div {
   background-color: #F0DCCA;
 }
-.landing-page-info {
+/* .landing-page-info {
   color: black;
-}
+} */
 
 .landing-page-button {
   width: 30%;
   margin: auto;
   margin-top: 15px;
   font-family: 'Merienda', cursive;
+}
+
+/*-----GROUPS AND ITEMS (DESKTOP)-----*/
+
+@media all and (min-width: 800px){
+  .landing-page-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    font-family: 'Merienda', cursive;
+    width: 100%
+  }
+  
+  .landing-page-info-div {
+    /* background-color: black; */
+    width: 100%
+  }
+  .landing-page-info {
+    color: rgb(92, 87, 77);
+  }
+
+  .info-div{
+    background-color: black;
+    width: 100%;
+  }
+
+  .landing-page-h4{
+    color: rgb(67, 58, 58);
+  }
+  .landing-page-p{
+    color: rgb(43, 39, 39);
+  }
+  
+  .landing-page-button {
+    width: 30%;
+    margin: auto;
+    margin-top: 15px;
+    font-family: 'Merienda', cursive;
+  }
 }

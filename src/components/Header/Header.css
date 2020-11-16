@@ -24,3 +24,42 @@
     text-decoration: none;
     color: rgb(83, 79, 79);
 }
+
+/*-----GROUPS AND ITEMS (DESKTOP)-----*/
+
+@media all and (min-width: 800px){
+    .header-div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+        text-align: center;
+        /* background-image: url("../../images/leaves.png"); */
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .header{
+        color: rgb(114, 86, 86);
+        font-family: 'Chewy', cursive;
+        font-size: 50px;
+    }
+    
+    .Header__logged-in{
+        display: flex;
+        font-family: 'Merienda', cursive;
+        justify-content: space-between;
+        /* background-color: black; */
+    }
+    .Header__not-logged-in{
+        font-family: 'Merienda', cursive;
+        /* background-color: black; */
+        margin-top: -20px;
+        width: 100%
+    }
+    
+    .link{
+        text-decoration: none;
+        color: rgb(83, 79, 79);
+    }
+}
