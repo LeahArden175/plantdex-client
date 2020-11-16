@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./AddPlantForm.css";
 import { Link } from "react-router-dom";
-import {customHistory} from '../../history'
+import history from '../../history'
 import config from "../../config";
 import Context from "../../Context";
 import TokenService from "../../services/token-service";
@@ -44,7 +44,7 @@ export default class AddPlantForm extends Component {
       .then((data) => {
         console.log(this.props);
         this.context.addPlant(data);
-        customHistory.push(`/plant/${data.id}`);
+        history.push(`/plant/${data.id}`);
       })
       .catch((err) => this.setState({ error: err.message }));
   };
