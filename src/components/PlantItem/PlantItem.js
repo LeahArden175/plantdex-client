@@ -56,6 +56,7 @@ export default class PlantItem extends Component {
           <p>{findPlant.scientificname}</p>
           <p>Adopted: {formattedDate}</p>
           <p>{findPlant.purchaseplace}</p>
+          <p>Days between watering: {findPlant.days_between_watering}</p>
         </div>
         <div className="button-div">
           <Link to={`/update/${this.props.plant}`}>

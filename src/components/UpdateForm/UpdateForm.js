@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import moment from "moment";
 import "./UpdateForm.css";
+import history from '../../history'
 import Context from "../../Context";
 import config from "../../config";
 import TokenService from "../../services/token-service";
@@ -13,7 +14,7 @@ export default class UpdateForm extends Component {
     nickname: "",
     purchaseplace: "",
     datepurchased: "",
-    // picture: ''
+    days_between_watering: ""
   };
 
   handleEditPlant = (event) => {
@@ -43,7 +44,7 @@ export default class UpdateForm extends Component {
         console.log(this.props);
         console.log("context:", this.context);
         this.context.editPlant(data);
-        this.props.history.push(`/plant/${data.id}`);
+        history.push(`/plant/${data.id}`);
       })
       .catch((error) => {
         console.error({ error });
@@ -63,6 +64,7 @@ export default class UpdateForm extends Component {
         nickname: findPlant.nickname,
         purchaseplace: findPlant.purchaseplace,
         datepurchased: moment(findPlant.datepurchased).format("YYYY-MM-DD"),
+        days_between_watering: findPlant.days_between_watering
       });
     }
     this.previousContext = this.context;
@@ -81,6 +83,7 @@ export default class UpdateForm extends Component {
         nickname: findPlant.nickname,
         purchaseplace: findPlant.purchaseplace,
         datepurchased: moment(findPlant.datepurchased).format("YYYY-MM-DD"),
+        days_between_watering: findPlant.days_between_watering
       });
     }
   };
@@ -108,6 +111,12 @@ export default class UpdateForm extends Component {
     this.setState({
       datepurchased,
     });
+  }
+
+  wateringDaysChanged(days_between_watering){
+    this.setState({
+      days_between_watering
+    })
   }
 
   render() {
@@ -149,6 +158,13 @@ export default class UpdateForm extends Component {
             type="text"
             value={this.state.scientificname}
             onChange={(e) => this.scientificNameChanged(e.target.value)}
+          />
+          <p className="edit-plant-p">Days between watering:</p>
+          <input
+            className="edit-input"
+            type="number"
+            value={this.state.days_between_watering}
+            onChange={(e) => this.wateringDaysChanged(e.target.value)}
           />
           <div className="edit-form-buttons">
             <button className="edit-buttons" type="submit">Submit</button>

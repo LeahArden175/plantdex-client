@@ -28,7 +28,8 @@ export default class PlantList extends Component {
         nickName={plant.nickname}
         datePurchased={plant.datepurchased}
         purchasePlace={plant.purchaseplace}
-        // picture={plant.picture}
+        days_between_watering={plant.days_between_watering}
+        date_last_watered={plant.date_last_watered}
       />
     ));
 
