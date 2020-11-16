@@ -169,9 +169,9 @@ h3 {
     list-style: none;
   }
 
-  .items::after{
+  /* .items::after{
     content: '';
     flex: auto;
 
-  }
+  } */
 }

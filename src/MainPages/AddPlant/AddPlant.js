@@ -17,7 +17,7 @@ export default class AddPlant extends Component {
 
     renderAddPlantPage() {
         return (
-            <AddPlantForm />
+            <AddPlantForm history={this.props.history}/>
         )
     }
 
