@@ -30,6 +30,7 @@ export default class PlantList extends Component {
         purchasePlace={plant.purchaseplace}
         days_between_watering={plant.days_between_watering}
         date_last_watered={plant.date_last_watered}
+        user_id={plant.user_id}
       />
     ));
 

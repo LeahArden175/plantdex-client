@@ -15,12 +15,12 @@ export default class AddPlantForm extends Component {
     purchaseplace: "",
     datepurchased: "",
     days_between_watering: '',
-    date_last_watered: ''
+    date_last_watered: '',
   };
 
   handleAddNewPlant = (event) => {
     event.preventDefault();
-    console.log(this.state);
+    console.log('PROPS:', this.props);
     console.log("Submit new plant button worked");
     let newPlant = {
       scientificname: this.state.scientificname,
