@@ -3,10 +3,18 @@ import './NewUserPage.css'
 import NewUserForm from '../../components/NewUserForm/NewUserForm'
 
 export default class NewUserPage extends Component {
+
+
+    handleRegistrationSuccess = user => {
+        const { history } = this.props
+        history.push('/login')
+      }
+
+    
     render() {
         return (
             <div>
-                <NewUserForm />
+                <NewUserForm onRegistrationSuccess={this.handleRegistrationSuccess}/>
             </div>
         )
     }
