@@ -57,10 +57,12 @@ export default class PlantBlock extends Component {
             to={`plant/${this.props.id}`
           }
         >
-        <h2>{this.props.nickName}</h2>
-        <button onClick={this.plantWatered}>Watered!</button>
-        <WateringAlert plants={plants}/>
+        <h2 className="nickname-block">{this.props.nickName}</h2>
         </Link>
+        <div className="watering-div">
+        <WateringAlert plants={plants}/>
+        <button onClick={this.plantWatered} className="watered-button">Watered!</button>
+        </div>
       </li>
     );
   }

@@ -7,10 +7,13 @@
   border: solid;
   padding: 20px;
   margin: 20px;
-  margin-top: 40px;
+  margin-top: 20px;
   background-color: #8d9f87;
   border-radius: 15px;
   text-align: left;
+}
+.add-plant-h3{
+  margin-top: 0px;
 }
 .add-plant-form-div {
   display: flex;
@@ -36,6 +39,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 10px;
 }
 .submit-button {
   box-shadow: inset 0px 0px 14px -3px #b5b8ae;
@@ -60,4 +64,79 @@
 .cancel-link{
   text-decoration: none;
   color: #a0b09b;
+}
+
+
+/*-----GROUPS AND ITEMS (DESKTOP)-----*/
+
+@media all and (min-width: 800px){
+
+  .add-plant-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: solid;
+    padding: 20px;
+    margin: auto;
+    width: 30%;
+    margin-top: 20px;
+    background-color: #8d9f87;
+    border-radius: 15px;
+    text-align: left;
+  }
+  .add-plant-h3{
+    margin-top: 0px;
+  }
+  .add-plant-form-div {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-items: center;
+    text-align: center;
+    /* display: block; */
+    margin: auto;
+    font-family: "Merienda", cursive;
+  }
+  .input {
+    width: 50%;
+    margin: auto;
+  }
+  
+  .input-labels {
+    padding-top: 10px;
+    font-family: "Merienda", cursive;
+    text-align: center;
+  }
+  .add-plant-button-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  .submit-button {
+    box-shadow: inset 0px 0px 14px -3px #b5b8ae;
+    background: linear-gradient(to bottom, #3c3d41 5%, #3c3d41 100%);
+    background-color: #3c3d41;
+    border-radius: 6px;
+    border: 1px solid #b2b8ad;
+    display: inline-block;
+    cursor: pointer;
+    color: #a0b09b;
+    font-family: "Merienda", cursive;
+    font-size: 15px;
+    font-weight: bold;
+    margin: auto;
+    /* margin-left: 10px; */
+    height: 35px;
+    padding: 10px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #3c3d41;
+  }
+  
+  .cancel-link{
+    text-decoration: none;
+    color: #a0b09b;
+  }
 }

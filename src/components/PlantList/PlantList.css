@@ -4,7 +4,7 @@ p {
 
 h3 {
   font-family: "Merienda", cursive;
-  font-size: 25px;
+  font-size: 19px;
   font-weight: 500;
 }
 
@@ -26,7 +26,7 @@ h3 {
   color: black;
   width: 100%;
   margin: auto;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .search-form button {
@@ -145,6 +145,7 @@ h3 {
     justify-content: center;
     align-items: center;
     width: 40%;
+    height: 40%;
     margin: auto;
     border: solid #696d7d;
     border-radius: 15px;
@@ -158,6 +159,7 @@ h3 {
   .link-style {
     text-decoration: none;
     color: black;
+    padding: 30px;
   }
   
   .items {

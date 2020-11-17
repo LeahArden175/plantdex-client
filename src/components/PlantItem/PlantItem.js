@@ -46,17 +46,24 @@ export default class PlantItem extends Component {
 
     console.log("props", this.props);
 
-    const formattedDate = moment(findPlant.datepurchased).format("MMM Do YYYY");
+    const formattedDatePurchased = moment(findPlant.datepurchased).format("MMM Do YYYY");
+    const formattedDateWatered = moment(findPlant.date_last_watered).format("MMM Do YYYY")
 
     return (
       <div className="plant-item-div">
         {/* <img className="image" alt="Plant" src={findPlant.picture} /> */}
         <div className="plant-item">
           <h2 className="nickname">{findPlant.nickname}</h2>
-          <p>{findPlant.scientificname}</p>
-          <p>Adopted: {formattedDate}</p>
-          <p>{findPlant.purchaseplace}</p>
-          <p>Days between watering: {findPlant.days_between_watering}</p>
+          <p className="categories">Scientific Name:</p>
+          <p className="prop-categories">{findPlant.scientificname}</p>
+          <p className="categories">Adopted:</p>
+          <p className="prop-categories">{formattedDatePurchased}</p>
+          <p className="categories">Aquired from:</p>
+          <p className="prop-categories">{findPlant.purchaseplace}</p>
+          <p className="categories">Days between watering:</p>
+          <p className="prop-categories">{findPlant.days_between_watering}</p>
+          <p className="categories">Last watering date:</p>
+          <p className="prop-categories">{formattedDateWatered}</p>
         </div>
         <div className="button-div">
           <Link to={`/update/${this.props.plant}`}>

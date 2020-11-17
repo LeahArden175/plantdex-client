@@ -14,7 +14,8 @@ export default class AddPlantForm extends Component {
     nickname: "",
     purchaseplace: "",
     datepurchased: "",
-    // picture: ''
+    days_between_watering: '',
+    date_last_watered: ''
   };
 
   handleAddNewPlant = (event) => {
@@ -26,6 +27,8 @@ export default class AddPlantForm extends Component {
       nickname: this.state.nickname,
       purchaseplace: this.state.purchaseplace,
       datepurchased: this.state.datepurchased,
+      date_last_watered: this.state.date_last_watered,
+      days_between_watering: this.state.days_between_watering
     };
     fetch(`${config.API_ENDPOINT}/api/plants`, {
       method: "POST",
@@ -74,10 +77,22 @@ export default class AddPlantForm extends Component {
     });
   }
 
+  daysBetweenChanged(days_between_watering){
+    this.setState({
+      days_between_watering
+    })
+  }
+
+  dateLastWateredChanged(date_last_watered){
+    this.setState({
+      date_last_watered
+    })
+  }
+
   render() {
     return (
       <div className="add-plant-form-div">
-        <h3>Add a new Plant</h3>
+        <h3 className="add-plant-h3">Add a new Plant</h3>
         <form className="add-plant-form" onSubmit={this.handleAddNewPlant}>
           <label className="input-labels" htmlFor="plantType">
             Scientific Name:
@@ -119,10 +134,24 @@ export default class AddPlantForm extends Component {
             value={this.state.datepurchased}
             onChange={(e) => this.datepurchasedChanged(e.target.value)}
           />
-          {/* <label className="input-labels" htmlFor="Picture">
-            Upload Picture:
+          <label className="input-labels" htmlFor="Last day it was watered">
+          Last time it was watered:
           </label>
-          <input className="input" type="file" id="img" accept="image/*" /> */}
+          <input
+            className="input"
+            type="date"
+            value={this.state.date_last_watered}
+            onChange={(e) => this.dateLastWateredChanged(e.target.value)}
+          />
+          <label className="input-labels" htmlFor="Amount of days between watering">
+          Amount of days between watering:
+          </label>
+          <input
+            className="input"
+            type="number"
+            value={this.state.days_between_watering}
+            onChange={(e) => this.daysBetweenChanged(e.target.value)}
+          />
           <div className="add-plant-button-div">
             <button className="submit-button" type="submit">
               Submit

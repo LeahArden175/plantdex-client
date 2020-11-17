@@ -9,6 +9,8 @@
 .header{
     color: rgb(83, 79, 79);
     font-family: 'Chewy', cursive;
+    font-size: 25px;
+    margin-top: 35px;
 }
 
 .Header__logged-in{

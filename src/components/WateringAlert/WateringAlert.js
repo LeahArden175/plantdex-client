@@ -12,15 +12,15 @@ export default class WateringAlert extends Component {
 
     if (diffDays < daysBetween) {
       return (
-        <p>Happy plant</p>
+        <p>I'm so happy! 😎</p>
       ) 
     } else if (diffDays > overDue){
       return (
-        <p>Why havent you watered me? It's been {diffDays} days!</p>
+        <p>I must be dead! 😢  It's been {diffDays} days!</p>
       ) 
     } else if (diffDays === daysBetween){
       return (
-        <p>Time to water me</p>
+        <p>Time to water me 💧</p>
       )
     } else {
       return (
