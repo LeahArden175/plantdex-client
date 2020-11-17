@@ -4,30 +4,26 @@ import Context from "../../Context";
 import config from '../../config'
 import "./PlantBlock.css";
 import TokenService from "../../services/token-service";
+import WateringAlert from "../WateringAlert/WateringAlert";
 
 export default class PlantBlock extends Component {
 
   static contextType = Context;
-
-
-  wateringMessage(days_between_watering, date_last_watered) {
-    console.log(this.props)
-  }
   
   plantWatered = (event) => {
     event.preventDefault()
     console.log('watered button pressed')
     const plant_id = this.props.id
+    const wateredDate = new Date().toISOString()
+    // console.log('wateredDate:', wateredDate)
     const updatedPlant = {
       scientificname: this.props.scientificname,
       nickname: this.props.nickName,
       purchaseplace: this.props.purchaseplace,
       datepurchased: this.props.datepurchased,
       days_between_watering: this.props.days_between_watering,
-      date_last_watered: Date.now() 
+      date_last_watered: wateredDate,
     }
-
-    console.log(Date.now())
     fetch(`${config.API_ENDPOINT}/api/plants/${plant_id}`, {
       method: "PATCH",
       headers: {
@@ -50,9 +46,9 @@ export default class PlantBlock extends Component {
 
   }
 
+
   render() {
-    console.log(this.props)
-    
+    const plants= this.props
     return (
       <li className='list-items' key="this.props.id">
         {/* <img className="image" alt="Plant" src={this.props.picture} /> */}
@@ -63,6 +59,7 @@ export default class PlantBlock extends Component {
         >
         <h2>{this.props.nickName}</h2>
         <button onClick={this.plantWatered}>Watered!</button>
+        <WateringAlert plants={plants}/>
         </Link>
       </li>
     );
