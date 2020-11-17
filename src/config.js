@@ -2,5 +2,5 @@
 export default {
     API_ENDPOINT: 'https://agile-anchorage-81285.herokuapp.com',
     // API_ENDPOINT: 'http://localhost:8000',
-    TOKEN_KEY: 'plant-dex-client-auth-token'
+    TOKEN_KEY: process.env.REACT_APP_TOKEN_KEY
 }

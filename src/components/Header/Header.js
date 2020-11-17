@@ -24,13 +24,7 @@ export default class Header extends Component {
   renderLoginLink() {
     return (
       <div className="Header__not-logged-in">
-        <Link to="/register" className="link">
-          Register
-        </Link>
-        <span className="Hyph">{" - "}</span>
-        <Link to="/login" className="link">
-          Log in
-        </Link>
+        <></>
       </div>
     );
   }

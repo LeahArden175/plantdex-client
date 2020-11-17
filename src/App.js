@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import LandingPage from "./MainPages/LandingPage/LandingPage";
 import Header from "./components/Header/Header";
@@ -8,68 +8,75 @@ import PlantListPage from "./MainPages/PlantListPage/PlantListPage";
 import NewUserPage from "./MainPages/NewUserPage/NewUserPage";
 import PlantPage from "./MainPages/PlantPage/PlantPage";
 import UpdatePage from "./MainPages/UpdatePage/UpdatePage";
-import config from './config'
-import Context from './Context'
+import config from "./config";
+import Context from "./Context";
 import TokenService from "./services/token-service";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import NotFoundPage from './MainPages/NotFoundPage/NotFoundPage'
 
 class App extends Component {
-
-  state={
+  state = {
     plantInfo: [],
+    hasError: false
+  };
+
+  static getDerivedStateFromError(error) {
+    console.error(error)
+    return { hasError: true }
   }
 
   fetchPlant = () => {
-    fetch(`${config.API_ENDPOINT}/api/plants`,{
+    fetch(`${config.API_ENDPOINT}/api/plants`, {
       headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`
-      }
-    }) 
-    .then(res => {
-      if(!res.ok){
-        throw new Error(res.status)
-      }
-      return res.json()
+        authorization: `bearer ${TokenService.getAuthToken()}`,
+      },
     })
-    .then(this.setPlantInfo)
-    .catch(error => this.setState({ error }))
-  }
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(res.status);
+        }
+        return res.json();
+      })
+      .then(this.setPlantInfo)
+      .catch((error) => this.setState({ error }));
+  };
 
-  setPlantInfo = plantInfo => {
-    this.setState({ plantInfo })
-    console.log('state', this.state)
-  }
+  setPlantInfo = (plantInfo) => {
+    this.setState({ plantInfo });
+    console.log("state", this.state);
+  };
 
   handleDeletePlant = (plantId) => {
     this.setState({
-      plantInfo: this.state.plantInfo.filter((plant)=> plant.id != plantId)
-    })
-  }
+      plantInfo: this.state.plantInfo.filter((plant) => plant.id != plantId),
+    });
+  };
 
   handleAddPlant = (plant) => {
-    console.log(plant)
+    console.log(plant);
     this.setState({
-      plantInfo: [...this.state.plantInfo, plant]
-    })
-  }
+      plantInfo: [...this.state.plantInfo, plant],
+    });
+  };
 
-  handleEditPlant = (plant) =>{
-    const newPlants = this.state.plantInfo.map(statePlant => {
-      if(statePlant.id === plant.id){
-        return plant
+  handleEditPlant = (plant) => {
+    const newPlants = this.state.plantInfo.map((statePlant) => {
+      if (statePlant.id === plant.id) {
+        return plant;
       }
-      return statePlant
-    })
+      return statePlant;
+    });
     this.setState({
-      plantInfo: newPlants
-    })
-  }
+      plantInfo: newPlants,
+    });
+  };
 
   handleSort = (plantInfo) => {
     this.setState({
-      plantInfo
-    })
-  }
-  
+      plantInfo,
+    });
+  };
+
   render() {
     const value = {
       plantInfo: this.state.plantInfo,
@@ -78,19 +85,27 @@ class App extends Component {
       setPlant: this.setPlantInfo,
       handleSort: this.handleSort,
       editPlant: this.handleEditPlant,
-      fetchPlant : this.fetchPlant 
-    }
+      fetchPlant: this.fetchPlant,
+    };
     return (
-      <Context.Provider value={value} >
-      <div className="app">
-        <Header />
-        <Route exact path="/" component={LandingPage} />
-        <Route exact path="/add-plant" component={AddPlant} />
-        <Route exact path="/plant-list" component={PlantListPage} />
-        <Route exact path="/sign-up" component={NewUserPage} />
-        <Route exact path="/plant/:id" component={PlantPage} />
-        <Route exact path="/update/:id" component={UpdatePage} />
-      </div>
+      <Context.Provider value={value}>
+        <div className="app">
+          <Header />
+          <main>
+          {this.state.hasError && <p className='red'>There was an error! Oh no!</p>}
+            <Switch>
+              <Route exact path="/" component={LandingPage} />
+              <PrivateRoute exact path="/add-plant" component={AddPlant} />
+              <PrivateRoute exact path="/plant-list" component={PlantListPage} />
+              <Route exact path="/sign-up" component={NewUserPage} />
+              <PrivateRoute exact path="/plant/:id" component={PlantPage} />
+              <PrivateRoute exact path="/update/:id" component={UpdatePage} />
+              <Route
+              component={NotFoundPage}
+            />
+            </Switch>
+          </main>
+        </div>
       </Context.Provider>
     );
   }

@@ -6,8 +6,8 @@ export default class NewUserForm extends Component {
   render() {
     return (
       <div>
-        <div className="loginForm-div">
-          <form className="loginForm">
+        <div className="new-user-form-div">
+          <form className="new-user-form">
             <label className="input-labels" htmlFor="username">
               Username
             </label>
@@ -20,12 +20,14 @@ export default class NewUserForm extends Component {
               Password
             </label>
             <input className="input" type="password" placeholder="password" />
+            <div className='new-user-button-div'>
             <button className="submit-button" type="submit">
               Sign-up!
             </button>
-            <Link to="/">
-              <button>Cancel</button>
+            <Link className='submit-button' to="/">
+              Cancel
             </Link>
+            </div>
           </form>
         </div>
       </div>

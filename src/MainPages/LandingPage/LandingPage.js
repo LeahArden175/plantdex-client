@@ -27,7 +27,7 @@ export default class LandingPage extends Component {
             needs!
           </h3>
           <h4 className="landing-page-h4">
-              Log your plants and keep track of their growth!
+              Log your plants and keep track of their watering schedule!
             </h4>
             <p className="landing-page-p">Get Started!</p>
         </div>

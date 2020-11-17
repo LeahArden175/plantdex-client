@@ -10,6 +10,10 @@ export default class LoginForm extends Component {
     onLoginSuccess: () => {}
   }
 
+  state={
+    error: false
+  }
+
   static contextType = Context
 
   handleSubmitJwtAuth = ev => {
@@ -30,15 +34,20 @@ export default class LoginForm extends Component {
       })
       .catch(res => {
         this.setState({ error: res.error})
+        console.log({ error: res.error})
       })
   }
   render() {
+    const { error } = this.state
     return (
         <div className="loginForm-div">
           <form 
             className="loginForm"
             onSubmit={this.handleSubmitJwtAuth}
           >
+            <div className="error-div">
+            {error && <p className='red'>{error}</p>}
+            </div>
             <label 
               className="input-labels" 
               htmlFor="username"

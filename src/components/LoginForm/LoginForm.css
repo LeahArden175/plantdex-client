@@ -24,6 +24,11 @@
   text-align: left;
 }
 
+.error-div{
+  text-align: center;
+  color:rgb(140, 64, 64)
+}
+
 .sign-up-button-div {
   display: flex;
   flex-direction: column;
