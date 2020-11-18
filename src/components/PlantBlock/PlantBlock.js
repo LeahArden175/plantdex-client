@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import{ Link }from 'react-router-dom'
+import PropTypes from 'prop-types'
 import Context from "../../Context";
 import config from '../../config'
 import "./PlantBlock.css";
@@ -66,4 +67,17 @@ export default class PlantBlock extends Component {
       </li>
     );
   }
+}
+
+PlantBlock.propTypes = {
+  plants: PropTypes.arrayOf(
+    PropTypes.shape({
+      scientificname: PropTypes.string.required,
+      nickname: PropTypes.string.required,
+      purchaseplace: PropTypes.string.required,
+      datepurchased: PropTypes.instanceOf(Date).required,
+      date_last_watered: PropTypes.instanceOf(Date).required,
+      days_between_watering: PropTypes.instanceOf(Date).required,
+    })
+  )
 }

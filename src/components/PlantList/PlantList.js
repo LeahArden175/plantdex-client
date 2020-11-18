@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./PlantList.css";
+import PropTypes from 'prop-types'
 import PlantBlock from "../PlantBlock/PlantBlock";
 import { Link } from "react-router-dom";
 import Context from "../../Context";
@@ -11,13 +12,21 @@ export default class PlantList extends Component {
 
   static contextType = Context;
 
-  toggleSort = (event) => {
+  toggleSortAlphabetical = (event) => {
     event.preventDefault();
     const plantInfo = this.context.plantInfo;
     plantInfo.sort((a, b) => a.nickname.localeCompare(b.nickname));
     this.context.setPlant({ plantInfo });
     this.context.handleSort(plantInfo);
   };
+
+  toggleSortPurchaseDate = (event) => {
+    event.preventDefault()
+    const plantInfo = this.context.plantInfo;
+    plantInfo.sort((a, b) => new Date(a.datepurchased) - new Date(b.datepurchased))
+    this.context.setPlant({ plantInfo });
+    this.context.handleSort(plantInfo);
+  }
 
   render() {
     const getPlants = this.context.plantInfo.map((plant, index) => (
@@ -40,8 +49,8 @@ export default class PlantList extends Component {
           <h3>You have {this.context.plantInfo.length} AMAZING plants!</h3>
           <form className="search-form" onSubmit={this.handleSearch}>
             <p>Sort By: </p>
-            <button>All</button>
-            <button onClick={this.toggleSort}>Alphabetically</button>
+            <button onClick={this.toggleSortPurchaseDate}>All</button>
+            <button onClick={this.toggleSortAlphabetical}>Alphabetically</button>
             {/* <Link to="/add-plant" className="add-new-button" className="link">Add a new plant!</Link> */}
           </form>
         </div>
@@ -56,4 +65,8 @@ export default class PlantList extends Component {
       </div>
     );
   }
+}
+
+PlantList.propTypes={
+  match: PropTypes.object
 }

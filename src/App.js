@@ -37,6 +37,7 @@ class App extends Component {
         }
         return res.json();
       })
+      //add ternary statement here?
       .then(this.setPlantInfo)
       .catch((error) => this.setState({ error }));
   };

@@ -15,7 +15,6 @@ export default class PlantListPage extends Component {
 
   renderPlantListPage() {
     const {plantInfo} = this.context
-      console.log(plantInfo)
     return (
     <PlantList plantInfo={plantInfo}/>
     )
@@ -31,7 +30,6 @@ export default class PlantListPage extends Component {
   
     render() {
       const {plantInfo} = this.context
-      console.log(plantInfo)
         return (
             <div className="plant-list">
               {TokenService.hasAuthToken()

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./NewUserForm.css";
 import { Link } from "react-router-dom";
 import config from '../../config'
+import ErrorBoundary from "../../ErrorBoundary";
+import PropTypes from 'prop-types'
 
 export default class NewUserForm extends Component {
 
@@ -47,6 +49,7 @@ export default class NewUserForm extends Component {
     return (
       <div>
         <div className="new-user-form-div">
+          <ErrorBoundary>
           <form 
             className="new-user-form" 
             onSubmit={this.handleSubmitNewUser}
@@ -104,9 +107,19 @@ export default class NewUserForm extends Component {
             </Link>
             </div>
           </form>
+          </ErrorBoundary>
         </div>
       </div>
     );
   }
-  s;
+}
+
+NewUserForm.propTypes = {
+  users: PropTypes.arrayOf(PropTypes.shape({
+      full_name: PropTypes.string.required,
+      nickname: PropTypes.string.required,
+      username: PropTypes.string.required,
+      password: PropTypes.string.required,
+    })
+  )
 }

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'
 import "./WateringAlert.css";
 
 export default class WateringAlert extends Component {
@@ -30,7 +31,15 @@ export default class WateringAlert extends Component {
   }
 
   render() {
-    console.log("PROPS", this.props);
     return <div>{this.wateringMessage()}</div>;
   }
+}
+
+WateringAlert.propTypes ={
+  alerts: PropTypes.arrayOf(
+    PropTypes.shape({
+      date_last_watered: PropTypes.instanceOf(Date),
+      days_between_watering: PropTypes.instanceOf(Date),
+    })
+  )
 }

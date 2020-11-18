@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import moment from "moment";
+import PropTypes from 'prop-types'
 import { Link } from "react-router-dom";
 import "./PlantItem.css";
 import Context from "../../Context";
@@ -80,4 +81,17 @@ export default class PlantItem extends Component {
       </div>
     );
   }
+}
+
+PlantItem.propTypes = {
+  plants: PropTypes.arrayOf(
+    PropTypes.shape({
+      scientificname: PropTypes.string.required,
+      nickname: PropTypes.string.required,
+      purchaseplace: PropTypes.string.required,
+      datepurchased: PropTypes.instanceOf(Date).required,
+      date_last_watered: PropTypes.instanceOf(Date).required,
+      days_between_watering: PropTypes.instanceOf(Date).required,
+    })
+  )
 }

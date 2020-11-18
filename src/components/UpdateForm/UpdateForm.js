@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import moment from "moment";
+import PropTypes from 'prop-types';
 import "./UpdateForm.css";
-import history from '../../history'
+import history from "../../history";
 import Context from "../../Context";
 import config from "../../config";
 import TokenService from "../../services/token-service";
 import { Link } from "react-router-dom";
+import ErrorBoundary from "../../ErrorBoundary";
+
 
 export default class UpdateForm extends Component {
   static contextType = Context;
@@ -14,7 +17,7 @@ export default class UpdateForm extends Component {
     nickname: "",
     purchaseplace: "",
     datepurchased: "",
-    days_between_watering: ""
+    days_between_watering: "",
   };
 
   handleEditPlant = (event) => {
@@ -64,7 +67,7 @@ export default class UpdateForm extends Component {
         nickname: findPlant.nickname,
         purchaseplace: findPlant.purchaseplace,
         datepurchased: moment(findPlant.datepurchased).format("YYYY-MM-DD"),
-        days_between_watering: findPlant.days_between_watering
+        days_between_watering: findPlant.days_between_watering,
       });
     }
     this.previousContext = this.context;
@@ -83,7 +86,7 @@ export default class UpdateForm extends Component {
         nickname: findPlant.nickname,
         purchaseplace: findPlant.purchaseplace,
         datepurchased: moment(findPlant.datepurchased).format("YYYY-MM-DD"),
-        days_between_watering: findPlant.days_between_watering
+        days_between_watering: findPlant.days_between_watering,
       });
     }
   };
@@ -113,10 +116,10 @@ export default class UpdateForm extends Component {
     });
   }
 
-  wateringDaysChanged(days_between_watering){
+  wateringDaysChanged(days_between_watering) {
     this.setState({
-      days_between_watering
-    })
+      days_between_watering,
+    });
   }
 
   render() {
@@ -130,50 +133,72 @@ export default class UpdateForm extends Component {
     }
     return (
       <div className="edit-plant-div">
-        <form className="edit-form" onSubmit={this.handleEditPlant}>
-          <h4 className="edit-plant-p">Nickname:</h4>
-          <input
-            className="edit-input"
-            type="text"
-            value={this.state.nickname}
-            onChange={(e) => this.nickNameChanged(e.target.value)}
-          />
-          <p className="edit-plant-p">Adoption Date:</p>
-          <input
-            className="edit-input"
-            type="date"
-            value={this.state.datepurchased}
-            onChange={(e) => this.datepurchasedChanged(e.target.value)}
-          />
-          <p className="edit-plant-p">Place of purchase:</p>
-          <input
-            className="edit-input"
-            type="text"
-            value={this.state.purchaseplace}
-            onChange={(e) => this.purchasePlaceChanged(e.target.value)}
-          />
-          <p className="edit-plant-p">Scientific Name:</p>
-          <input
-            className="edit-input"
-            type="text"
-            value={this.state.scientificname}
-            onChange={(e) => this.scientificNameChanged(e.target.value)}
-          />
-          <p className="edit-plant-p">Days between watering:</p>
-          <input
-            className="edit-input"
-            type="number"
-            value={this.state.days_between_watering}
-            onChange={(e) => this.wateringDaysChanged(e.target.value)}
-          />
-          <div className="edit-form-buttons">
-            <button className="edit-buttons" type="submit">Submit</button>
-            <button className="edit-buttons">
-              <Link className="edit-link-button" to={`/plant/${this.props.plant}`}>Cancel</Link>
+        <ErrorBoundary>
+          <form className="edit-form" onSubmit={this.handleEditPlant}>
+            <h4 className="edit-plant-p">Nickname:</h4>
+            <input
+              className="edit-input"
+              type="text"
+              value={this.state.nickname}
+              onChange={(e) => this.nickNameChanged(e.target.value)}
+            />
+            <p className="edit-plant-p">Adoption Date:</p>
+            <input
+              className="edit-input"
+              type="date"
+              value={this.state.datepurchased}
+              onChange={(e) => this.datepurchasedChanged(e.target.value)}
+            />
+            <p className="edit-plant-p">Place of purchase:</p>
+            <input
+              className="edit-input"
+              type="text"
+              value={this.state.purchaseplace}
+              onChange={(e) => this.purchasePlaceChanged(e.target.value)}
+            />
+            <p className="edit-plant-p">Scientific Name:</p>
+            <input
+              className="edit-input"
+              type="text"
+              value={this.state.scientificname}
+              onChange={(e) => this.scientificNameChanged(e.target.value)}
+            />
+            <p className="edit-plant-p">Days between watering:</p>
+            <input
+              className="edit-input"
+              type="number"
+              value={this.state.days_between_watering}
+              onChange={(e) => this.wateringDaysChanged(e.target.value)}
+            />
+            <div className="edit-form-buttons">
+              <button className="edit-buttons" type="submit">
+                Submit
               </button>
-          </div>
-        </form>
+              <button className="edit-buttons">
+                <Link
+                  className="edit-link-button"
+                  to={`/plant/${this.props.plant}`}
+                >
+                  Cancel
+                </Link>
+              </button>
+            </div>
+          </form>
+        </ErrorBoundary>
       </div>
     );
   }
+}
+
+UpdateForm.propTypes = {
+  plants: PropTypes.arrayOf(
+    PropTypes.shape({
+      scientificname: PropTypes.string,
+      nickname: PropTypes.string,
+      purchaseplace: PropTypes.string,
+      datepurchased: PropTypes.instanceOf(Date),
+      date_last_watered: PropTypes.instanceOf(Date),
+      days_between_watering: PropTypes.instanceOf(Date),
+    })
+  )
 }

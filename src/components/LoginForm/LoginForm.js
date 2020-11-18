@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import AuthApiService from '../../services/auth-api-service'
 import TokenService from '../../services/token-service'
 import Context from "../../Context";
+import ErrorBoundary from "../../ErrorBoundary";
+import PropTypes from "prop-types";
 
 export default class LoginForm extends Component {
   static defaultProps = {
@@ -41,6 +43,7 @@ export default class LoginForm extends Component {
     const { error } = this.state
     return (
         <div className="loginForm-div">
+          <ErrorBoundary>
           <form 
             className="loginForm"
             onSubmit={this.handleSubmitJwtAuth}
@@ -81,7 +84,16 @@ export default class LoginForm extends Component {
               </Link>
             </div>
           </form>
+          </ErrorBoundary>
         </div>
     );
   }
+}
+
+LoginForm.propTypes = {
+  users: PropTypes.arrayOf(PropTypes.shape({
+      username: PropTypes.string.required,
+      password: PropTypes.string.required,
+    })
+  )
 }
