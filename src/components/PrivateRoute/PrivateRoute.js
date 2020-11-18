@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import TokenService from '../../services/token-service'
+import history from '../../history'
 
 export default function PrivateRoute({ component, ...props }) {
   const Component = component
@@ -10,12 +11,7 @@ export default function PrivateRoute({ component, ...props }) {
       render={componentProps => (
         TokenService.hasAuthToken()
           ? <Component {...componentProps} />
-          : <Redirect
-              to={{
-                pathname: '/',
-                state: { from: componentProps.location }
-              }}
-            />
+          : history.push('/')
       )}
     />
   )

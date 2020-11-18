@@ -12,7 +12,6 @@ export default class LandingPage extends Component {
   };
 
   handleLoginSuccess = () => {
-    console.log(this.context);
     const { location, history } = this.props;
     const destination = (location.state || {}).from || "/plant-list";
     history.push(destination);

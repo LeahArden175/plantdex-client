@@ -22,8 +22,6 @@ export default class AddPlantForm extends Component {
 
   handleAddNewPlant = (event) => {
     event.preventDefault();
-    console.log("PROPS:", this.props);
-    console.log("Submit new plant button worked");
     let newPlant = {
       scientificname: this.state.scientificname,
       nickname: this.state.nickname,
@@ -47,7 +45,6 @@ export default class AddPlantForm extends Component {
         return response.json();
       })
       .then((data) => {
-        console.log(this.props);
         this.context.addPlant(data);
         history.push(`/plant/${data.id}`);
       })
@@ -58,7 +55,6 @@ export default class AddPlantForm extends Component {
     this.setState({
       scientificname,
     });
-    console.log(this.state.scientificname);
   }
 
   nickNameChanged(nickname) {

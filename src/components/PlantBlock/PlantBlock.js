@@ -13,10 +13,8 @@ export default class PlantBlock extends Component {
   
   plantWatered = (event) => {
     event.preventDefault()
-    console.log('watered button pressed')
     const plant_id = this.props.id
     const wateredDate = new Date().toISOString()
-    // console.log('wateredDate:', wateredDate)
     const updatedPlant = {
       scientificname: this.props.scientificname,
       nickname: this.props.nickName,
@@ -34,14 +32,12 @@ export default class PlantBlock extends Component {
       body: JSON.stringify(updatedPlant),
     })
     .then((response) => {
-      console.log(response)
       if(!response.ok) {
         throw new Error(response.status);
       }
       return response.json()
     })
     .then((data) => {
-      console.log('data', data)
       this.context.editPlant(data)
     })
 

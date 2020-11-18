@@ -12,9 +12,7 @@ export default class PlantItem extends Component {
 
   handleDeletePlant = (event) => {
     event.preventDefault();
-    console.log("delete clicked");
     const plant_id = this.props.plant;
-    console.log("Plant_id:", plant_id);
 
     fetch(`${config.API_ENDPOINT}/api/plants/${plant_id}`, {
       method: "DELETE",
@@ -27,7 +25,6 @@ export default class PlantItem extends Component {
         if (!res.ok) return res.json().then((event = Promise.reject(event)));
       })
       .then(() => {
-        console.log(plant_id);
         this.context.deletePlant(plant_id);
         this.props.history.push("/plant-list");
       })
@@ -45,14 +42,11 @@ export default class PlantItem extends Component {
       return "loading";
     }
 
-    console.log("props", this.props);
-
     const formattedDatePurchased = moment(findPlant.datepurchased).format("MMM Do YYYY");
     const formattedDateWatered = moment(findPlant.date_last_watered).format("MMM Do YYYY")
 
     return (
       <div className="plant-item-div">
-        {/* <img className="image" alt="Plant" src={findPlant.picture} /> */}
         <div className="plant-item">
           <h2 className="nickname">{findPlant.nickname}</h2>
           <p className="categories">Scientific Name:</p>

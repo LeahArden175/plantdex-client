@@ -22,10 +22,8 @@ export default class UpdateForm extends Component {
 
   handleEditPlant = (event) => {
     event.preventDefault();
-    console.log("edit clicked");
     const plant_id = this.props.plant;
     let updatedPlant = this.state;
-    console.log(updatedPlant);
     fetch(`${config.API_ENDPOINT}/api/plants/${plant_id}`, {
       method: "PATCH",
       headers: {
@@ -35,17 +33,12 @@ export default class UpdateForm extends Component {
       body: JSON.stringify(updatedPlant),
     })
       .then((response) => {
-        console.log(updatedPlant);
         if (!response.ok) {
           throw new Error(response.status);
         }
-        console.log("made past error");
         return response.json();
       })
       .then((data) => {
-        console.log("data", data);
-        console.log(this.props);
-        console.log("context:", this.context);
         this.context.editPlant(data);
         history.push(`/plant/${data.id}`);
       })
@@ -55,13 +48,10 @@ export default class UpdateForm extends Component {
   };
 
   componentDidUpdate = () => {
-    // console.log(this.context)
     if (this.context !== this.previousContext) {
       const id = this.props.plant;
       const { plantInfo = [] } = this.context;
-      // console.log(this.context)
       const findPlant = plantInfo && plantInfo.find((plant) => plant.id == id);
-      // console.log(findPlant)
       this.setState({
         scientificname: findPlant.scientificname,
         nickname: findPlant.nickname,
@@ -77,9 +67,7 @@ export default class UpdateForm extends Component {
     this.previousContext = this.context;
     const id = this.props.plant;
     const { plantInfo = [] } = this.context;
-    // console.log(this.context)
     const findPlant = plantInfo && plantInfo.find((plant) => plant.id == id);
-    // console.log(findPlant)
     if (findPlant) {
       this.setState({
         scientificname: findPlant.scientificname,
@@ -95,7 +83,6 @@ export default class UpdateForm extends Component {
     this.setState({
       scientificname,
     });
-    console.log(this.state.scientificname);
   }
 
   nickNameChanged(nickname) {
@@ -125,7 +112,6 @@ export default class UpdateForm extends Component {
   render() {
     const id = this.props.plant;
     const { plantInfo = [] } = this.context;
-    // console.log(this.context)
     const findPlant = plantInfo && plantInfo.find((plant) => plant.id == id);
 
     if (!findPlant) {

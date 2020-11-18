@@ -9,7 +9,6 @@ export default class NewUserForm extends Component {
 
   handleSubmitNewUser = (event) => {
     event.preventDefault()
-    console.log('pressed')
 
       const { full_name, nickname, username, password } = event.target
 

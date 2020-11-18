@@ -37,14 +37,12 @@ class App extends Component {
         }
         return res.json();
       })
-      //add ternary statement here?
       .then(this.setPlantInfo)
       .catch((error) => this.setState({ error }));
   };
 
   setPlantInfo = (plantInfo) => {
     this.setState({ plantInfo });
-    console.log("state", this.state);
   };
 
   handleDeletePlant = (plantId) => {
@@ -54,7 +52,6 @@ class App extends Component {
   };
 
   handleAddPlant = (plant) => {
-    console.log(plant);
     this.setState({
       plantInfo: [...this.state.plantInfo, plant],
     });
