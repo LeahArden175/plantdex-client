@@ -34,7 +34,7 @@ export default class LandingPage extends Component {
               you do not want to, you can use the following account:
             </p>
             <p className="landing-page-p">Username: newuser</p>
-            <p className="landing-page-p">Password: newPassword2!</p>
+            <p className="landing-page-p">Password: newUser2!</p>
           </div>
           <LoginForm onLoginSuccess={this.handleLoginSuccess} />
       </div>
