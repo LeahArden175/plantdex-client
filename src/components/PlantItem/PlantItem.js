@@ -61,8 +61,8 @@ export default class PlantItem extends Component {
           <p className="prop-categories">{formattedDateWatered}</p>
         </div>
         <div className="button-div">
-          <Link to={`/update/${this.props.plant}`}>
-            <button className="plant-item-buttons">Edit Plant</button>
+          <Link className="plant-item-buttons" to={`/update/${this.props.plant}`}>
+            Edit
           </Link>
           <button
             className="plant-item-buttons"

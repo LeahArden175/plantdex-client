@@ -30,6 +30,7 @@
 .button-div {
   display: flex;
   justify-content: space-between;
+  margin: aut0;
 }
 
 .plant-item-buttons {
@@ -38,14 +39,15 @@
   background-color: #3c3d41;
   border-radius: 6px;
   border: 1px solid #b2b8ad;
-  display: inline-block;
+  display: flex;
   cursor: pointer;
   color: #a0b09b;
   font-family: "Merienda", cursive;
   font-size: 15px;
   font-weight: bold;
-  /* margin: auto; */
-  /* margin-left: 15px; */
+  margin: auto;
+  margin-left: 10px;
+  margin-right: 10px;
   height: 35px;
   padding: 10px;
   text-decoration: none;

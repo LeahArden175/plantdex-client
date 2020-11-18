@@ -17,7 +17,7 @@ export default class WateringAlert extends Component {
       ) 
     } else if (diffDays > overDue){
       return (
-        <p>I must be dead! 😢  It's been {diffDays} days!</p>
+        <p>😢It's been {diffDays} days!</p>
       ) 
     } else if (diffDays === daysBetween){
       return (
@@ -25,7 +25,7 @@ export default class WateringAlert extends Component {
       )
     } else {
       return (
-        <p>You are {diffDays} days late watering me</p>
+        <p>You are {diffDays} days late!</p>
       ) 
     }
   }

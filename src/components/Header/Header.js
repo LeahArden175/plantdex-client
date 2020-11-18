@@ -13,81 +13,48 @@ export default class Header extends Component {
   };
 
   renderHeaderLinks() {
-    if (this.context.loggedIn === true) {
+    if (TokenService.hasAuthToken()) {
       return (
-        <div className="Header__logged-in">
-          <Link to="/plant-list" className="link">
-            Your Plants!
-          </Link>
-          <Link onClick={this.handleLogoutClick} to="/" className="link">
-            Logout
-          </Link>
+        <div>
+          <div className="Header__logged-in">
+            <Link to="/plant-list" className="link">
+              Your Plants!
+            </Link>
+            <Link onClick={this.handleLogoutClick} to="/" className="link">
+              Logout
+            </Link>
+          </div>
+          <h1 className="header">
+            <span role="img" aria-label="seedling">
+              🌱
+            </span>{" "}
+            Plant-Dex{" "}
+            <span role="img" aria-label="seedling">
+              🌱
+            </span>
+          </h1>
         </div>
       );
     } else {
       return (
         <div className="Header__not-logged-in">
-          <></>
+          <h1 className="header">
+            <span role="img" aria-label="seedling">
+              🌱
+            </span>{" "}
+            Welcome to Plant-Dex{" "}
+            <span role="img" aria-label="seedling">
+              🌱
+            </span>
+          </h1>
         </div>
       );
     }
-  }
-
-  // renderLogoutLink() {
-  //   return (
-  //     <div className="Header__logged-in">
-  //       <Link to="/plant-list" className="link">
-  //         Your Plants!
-  //       </Link>
-  //       <Link onClick={this.handleLogoutClick} to="/" className="link">
-  //         Logout
-  //       </Link>
-  //     </div>
-  //   );
-  // }
-
-  // renderLoginLink() {
-  //   return (
-  //     <div className="Header__not-logged-in">
-  //       <></>
-  //     </div>
-  //   );
-  // }
-
-  renderWelcomeHeader() {
-    return (
-      <h1 className="header">
-        <span role="img" aria-label="seedling">
-          🌱
-        </span>{" "}
-        Welcome to Plant-Dex{" "}
-        <span role="img" aria-label="seedling">
-          🌱
-        </span>
-      </h1>
-    );
-  }
-
-  renderRegHeader() {
-    return (
-      <h1 className="header">
-        <span role="img" aria-label="seedling">
-          🌱
-        </span>{" "}
-        Plant-Dex{" "}
-        <span role="img" aria-label="seedling">
-          🌱
-        </span>
-      </h1>
-    );
   }
   render() {
     return (
       <div className="header-div">
         {this.renderHeaderLinks()}
-        {TokenService.hasAuthToken()
-          ? this.renderRegHeader()
-          : this.renderWelcomeHeader()}
       </div>
     );
   }
