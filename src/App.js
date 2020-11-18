@@ -16,6 +16,7 @@ import NotFoundPage from './MainPages/NotFoundPage/NotFoundPage'
 
 class App extends Component {
   state = {
+    loggedIn: false,
     plantInfo: [],
     hasError: false
   };
@@ -75,15 +76,23 @@ class App extends Component {
     });
   };
 
+  handleLoggedIn = (loggedIn) => {
+    this.setState({
+      loggedIn
+    })
+  }
+
   render() {
     const value = {
       plantInfo: this.state.plantInfo,
+      loggedIn: this.state.loggedIn,
       deletePlant: this.handleDeletePlant,
       addPlant: this.handleAddPlant,
       setPlant: this.setPlantInfo,
       handleSort: this.handleSort,
       editPlant: this.handleEditPlant,
       fetchPlant: this.fetchPlant,
+      handleLoggedIn: this.handleLoggedIn
     };
     return (
       <Context.Provider value={value}>

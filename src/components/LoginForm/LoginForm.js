@@ -33,6 +33,7 @@ export default class LoginForm extends Component {
         TokenService.saveAuthToken(res.authToken)
         this.props.onLoginSuccess()
         this.context.fetchPlant()
+        this.context.handleLoggedIn(true)
       })
       .catch(res => {
         this.setState({ error: res.error})

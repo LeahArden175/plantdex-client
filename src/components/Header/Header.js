@@ -2,32 +2,57 @@ import React, { Component } from "react";
 import "./Header.css";
 import TokenService from "../../services/token-service";
 import { Link } from "react-router-dom";
+import Context from "../../Context";
 
 export default class Header extends Component {
+  static contextType = Context;
+
   handleLogoutClick = () => {
     TokenService.clearAuthToken();
+    this.context.handleLoggedIn(false);
   };
 
-  renderLogoutLink() {
-    return (
-      <div className="Header__logged-in">
-        <Link to="/plant-list" className="link">
-          Your Plants!
-        </Link>
-        <Link onClick={this.handleLogoutClick} to="/" className="link">
-          Logout
-        </Link>
-      </div>
-    );
+  renderHeaderLinks() {
+    if (this.context.loggedIn === true) {
+      return (
+        <div className="Header__logged-in">
+          <Link to="/plant-list" className="link">
+            Your Plants!
+          </Link>
+          <Link onClick={this.handleLogoutClick} to="/" className="link">
+            Logout
+          </Link>
+        </div>
+      );
+    } else {
+      return (
+        <div className="Header__not-logged-in">
+          <></>
+        </div>
+      );
+    }
   }
 
-  renderLoginLink() {
-    return (
-      <div className="Header__not-logged-in">
-        <></>
-      </div>
-    );
-  }
+  // renderLogoutLink() {
+  //   return (
+  //     <div className="Header__logged-in">
+  //       <Link to="/plant-list" className="link">
+  //         Your Plants!
+  //       </Link>
+  //       <Link onClick={this.handleLogoutClick} to="/" className="link">
+  //         Logout
+  //       </Link>
+  //     </div>
+  //   );
+  // }
+
+  // renderLoginLink() {
+  //   return (
+  //     <div className="Header__not-logged-in">
+  //       <></>
+  //     </div>
+  //   );
+  // }
 
   renderWelcomeHeader() {
     return (
@@ -54,15 +79,13 @@ export default class Header extends Component {
           🌱
         </span>
       </h1>
-    )
+    );
   }
   render() {
     return (
       <div className="header-div">
+        {this.renderHeaderLinks()}
         {TokenService.hasAuthToken()
-          ? this.renderLogoutLink()
-          : this.renderLoginLink()}
-          {TokenService.hasAuthToken()
           ? this.renderRegHeader()
           : this.renderWelcomeHeader()}
       </div>
