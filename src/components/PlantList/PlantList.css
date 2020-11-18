@@ -29,6 +29,11 @@ h3 {
   margin-bottom: 20px;
 }
 
+.sort-button{
+  margin: 10px;
+}
+
+
 .search-form button {
   box-shadow: inset 0px 0px 14px -3px #f2fadc;
   background: linear-gradient(to bottom, #8D9F87 5%, #c1cdbd 100%);
@@ -41,7 +46,7 @@ h3 {
   font-family: "Merienda", cursive;
   font-size: 15px;
   font-weight: bold;
-  margin: auto;
+  margin: 10px;
   height: 35px;
   padding: 10px;
   text-decoration: none;
@@ -111,11 +116,11 @@ h3 {
     padding: 20px;
     background-color: #f0dcca;
     color: black;
-    width: 100%;
+    width: 40%;
     margin: auto;
     margin-bottom: 40px;
   }
-  
+
   .search-form button {
     box-shadow: inset 0px 0px 14px -3px #f2fadc;
     background: linear-gradient(to bottom, #8D9F87 5%, #c1cdbd 100%);
@@ -128,7 +133,7 @@ h3 {
     font-family: "Merienda", cursive;
     font-size: 15px;
     font-weight: bold;
-    margin: 0 30px;
+    margin: auto;
     height: 35px;
     padding: 10px;
     text-decoration: none;
@@ -170,10 +175,4 @@ h3 {
     text-align: center;
     list-style: none;
   }
-
-  /* .items::after{
-    content: '';
-    flex: auto;
-
-  } */
 }
