@@ -20,19 +20,23 @@ export default class LandingPage extends Component {
   render() {
     return (
       <div className="landing-page-div">
-        <div className="landing-page-info-div">
           <h3 className="landing-page-info">
             Plant-Dex helps you keep tabs on all your houseplants and their
             needs!
           </h3>
           <h4 className="landing-page-h4">
-              Log your plants and keep track of their watering schedule!
-            </h4>
+            Log your plants and keep track of their watering schedule!
+          </h4>
+          <div className="login-info">
             <p className="landing-page-p">Get Started!</p>
-        </div>
-        <div>
+            <p className="landing-page-p">
+              You are more than welcome to create your own account! However, if
+              you do not want to, you can use the following account:
+            </p>
+            <p className="landing-page-p">Username: newuser</p>
+            <p className="landing-page-p">Password: newPassword2!</p>
+          </div>
           <LoginForm onLoginSuccess={this.handleLoginSuccess} />
-        </div>
       </div>
     );
   }

@@ -9,12 +9,22 @@
 
 }
 
-.landing-page-info-div {
-  background-color: #F0DCCA;
+.login-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #494b48;;
+  border-radius: 15px;
+  margin: 0 40px;
+  padding: 10px;
+  border: solid;
 }
-/* .landing-page-info {
-  color: black;
-} */
+
+.landing-page-p{
+  font-size: 15px;
+  color: white;
+  margin: 7px;
+}
 
 .landing-page-button {
   width: 30%;
@@ -37,10 +47,6 @@
     width: 100%
   }
   
-  .landing-page-info-div {
-    /* background-color: black; */
-    width: 100%
-  }
   .landing-page-info {
     color: rgb(92, 87, 77);
   }
@@ -53,8 +59,21 @@
   .landing-page-h4{
     color: rgb(67, 58, 58);
   }
+  .login-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #494b48;;
+    border-radius: 15px;
+    width: 30%;
+    padding: 10px;
+    border: solid;
+  }
+  
   .landing-page-p{
-    color: rgb(43, 39, 39);
+    font-size: 15px;
+    color: white;
+    margin: 7px;
   }
   
   .landing-page-button {
