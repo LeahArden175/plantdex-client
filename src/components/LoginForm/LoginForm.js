@@ -42,7 +42,7 @@ export default class LoginForm extends Component {
   render() {
     const { error } = this.state
     return (
-        <div className="loginForm-div">
+
           <ErrorBoundary>
           <form 
             className="loginForm"
@@ -78,14 +78,15 @@ export default class LoginForm extends Component {
               Sign-in!
             </button>
             <div className="sign-up-button-div">
-              <p className="sign-up-p">Don't have an account? Sign-up</p>
+              <p className="sign-up-p" >Don't have an account?</p>
+              <p className="sign-up-p" >Sign-up</p>
               <Link className="login-page-buttons" to="/sign-up">
                 Here
               </Link>
             </div>
           </form>
           </ErrorBoundary>
-        </div>
+      
     );
   }
 }

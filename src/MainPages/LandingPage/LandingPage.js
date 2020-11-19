@@ -24,7 +24,7 @@ export default class LandingPage extends Component {
             Plant-Dex helps you keep tabs on all your houseplants and their
             needs!
           </h3>
-          <h4 className="landing-page-h4">
+          <h4 className="landing-page-info">
             Log your plants and keep track of their watering schedule!
           </h4>
           <div className="login-info">

@@ -2,15 +2,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
 }
 
 .header{
     color: rgb(83, 79, 79);
     font-family: 'Chewy', cursive;
-    font-size: 25px;
-    margin-top: 35px;
+    font-size: 27px;
+    margin-top: 25px;
 }
 
 .Header__logged-in{

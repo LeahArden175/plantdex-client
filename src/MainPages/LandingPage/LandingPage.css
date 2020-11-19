@@ -1,5 +1,5 @@
 .landing-page-div {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -9,15 +9,23 @@
 
 }
 
+
 .login-info{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   background-color: #494b48;;
   border-radius: 15px;
   margin: 0 40px;
   padding: 10px;
   border: solid;
+}
+
+.landing-page-info{
+  font-size: 15px;
+  margin: 15px;
+  color: rgb(67, 58, 58);
 }
 
 .landing-page-p{
@@ -44,7 +52,7 @@
     text-align: center;
     margin: auto;
     font-family: 'Merienda', cursive;
-    width: 100%
+    /* width: 100% */
   }
   
   .landing-page-info {
@@ -56,9 +64,13 @@
     width: 100%;
   }
 
-  .landing-page-h4{
+  .landing-page-info{
+    font-size: 15px;
+    margin: 15px;
     color: rgb(67, 58, 58);
   }
+
+
   .login-info{
     display: flex;
     flex-direction: column;
@@ -66,8 +78,9 @@
     background-color: #494b48;;
     border-radius: 15px;
     width: 30%;
-    padding: 10px;
+    padding: 20px;
     border: solid;
+    margin-top: 5px;
   }
   
   .landing-page-p{

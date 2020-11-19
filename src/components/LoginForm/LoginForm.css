@@ -4,7 +4,6 @@
   align-content: center;
   justify-items: center;
   text-align: center;
-  /* display: block; */
   margin: auto;
   font-family: "Merienda", cursive;
 }
@@ -13,20 +12,20 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center;
   text-align: center;
   border: solid;
-  padding: 20px;
-  margin: 20px;
-  /* margin-top: 40px; */
+  padding: 30px;
+  margin: 20px 40px;
   background-color: #8d9f87;
   border-radius: 15px;
-  text-align: left;
+  /* text-align: center; */
 }
 
 .error-div{
   text-align: center;
-  color:rgb(140, 64, 64)
+  color:rgb(140, 64, 64);
+  margin: 0px;
 }
 
 .sign-up-button-div {
@@ -67,7 +66,6 @@
     align-content: center;
     justify-items: center;
     text-align: center;
-    /* display: block; */
     margin: auto;
     font-family: "Merienda", cursive;
     width: 100%
@@ -75,14 +73,13 @@
 
   .loginForm {
     display: flex;
-     flex-direction: column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     border: solid;
     padding: 20px;
-    margin: auto;
-    margin-top: 40px;
+    width: 30%;
     background-color: #8d9f87;
     border-radius: 15px;
     text-align: left;
@@ -91,11 +88,4 @@
   .sign-up-p {
     text-align: center;
   }
-/* 
-  body {
-    background-image: url("../../images/monstera.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  } */
 }
