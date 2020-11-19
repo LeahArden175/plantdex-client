@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
   text-align: center;
   border: solid;
   padding: 20px;
@@ -21,7 +20,6 @@
   align-content: center;
   justify-items: center;
   text-align: center;
-  /* display: block; */
   margin: auto;
   font-family: "Merienda", cursive;
 }
@@ -54,7 +52,6 @@
   font-size: 15px;
   font-weight: bold;
   margin: auto;
-  /* margin-left: 10px; */
   height: 35px;
   padding: 10px;
   text-decoration: none;
@@ -95,7 +92,6 @@
     align-content: center;
     justify-items: center;
     text-align: center;
-    /* display: block; */
     margin: auto;
     font-family: "Merienda", cursive;
   }
@@ -128,7 +124,6 @@
     font-size: 15px;
     font-weight: bold;
     margin: 30px;
-    /* margin-left: 10px; */
     height: 35px;
     padding: 10px;
     text-decoration: none;

@@ -29,14 +29,12 @@ export default class PlantListPage extends Component {
   
   
     render() {
-      const {plantInfo} = this.context
         return (
             <div className="plant-list">
               {TokenService.hasAuthToken()
                 ? this.renderPlantListPage()
                 : this.renderLandingPage()
                 }
-                {/* <PlantList plantInfo={plantInfo}/> */}
             </div>
         )
     }

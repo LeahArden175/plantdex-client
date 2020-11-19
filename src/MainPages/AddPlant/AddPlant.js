@@ -28,7 +28,6 @@ export default class AddPlant extends Component {
                 ? this.renderAddPlantPage()
                 : this.renderLandingPage()
                 }
-                {/* <AddPlantForm history={this.props.history}/> */}
             </div>
         )
     }

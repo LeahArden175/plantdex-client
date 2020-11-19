@@ -98,10 +98,10 @@ export default class NewUserForm extends Component {
               placeholder="nickname" 
             />
             <div className='new-user-button-div'>
-            <button className="submit-button" type="submit">
-              Sign-up!
+            <button className="new-user-submit-button" type="submit">
+              Submit
             </button>
-            <Link className='submit-button' to="/">
+            <Link className='new-user-submit-button' to="/">
               Cancel
             </Link>
             </div>

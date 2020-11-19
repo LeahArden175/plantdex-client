@@ -48,7 +48,6 @@ export default class PlantBlock extends Component {
     const plants= this.props
     return (
       <li className='list-items' key="this.props.id">
-        {/* <img className="image" alt="Plant" src={this.props.picture} /> */}
         <Link 
             className='plant-link'
             to={`plant/${this.props.id}`

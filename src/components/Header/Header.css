@@ -36,7 +36,6 @@
         justify-content: center;
         padding: 20px;
         text-align: center;
-        /* background-image: url("../../images/leaves.png"); */
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -51,11 +50,9 @@
         display: flex;
         font-family: 'Merienda', cursive;
         justify-content: center;
-        /* background-color: black; */
     }
     .Header__not-logged-in{
         font-family: 'Merienda', cursive;
-        /* background-color: black; */
         margin-top: -20px;
         width: 100%
     }

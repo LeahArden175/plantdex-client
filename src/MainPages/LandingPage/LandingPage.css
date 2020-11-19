@@ -1,5 +1,4 @@
 .landing-page-div {
-  /* display: flex; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -52,7 +51,6 @@
     text-align: center;
     margin: auto;
     font-family: 'Merienda', cursive;
-    /* width: 100% */
   }
   
   .landing-page-info {

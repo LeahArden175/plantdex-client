@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./LandingPage.css";
 import LoginForm from "../../components/LoginForm/LoginForm";
-import Context from "../../Context";
 
 export default class LandingPage extends Component {
   static defaultProps = {
@@ -25,12 +24,12 @@ export default class LandingPage extends Component {
             needs!
           </h3>
           <h4 className="landing-page-info">
-            Log your plants and keep track of their watering schedule!
+            Log your plants and keep track of their watering schedule.
           </h4>
           <div className="login-info">
             <p className="landing-page-p">Get Started!</p>
             <p className="landing-page-p">
-              You are more than welcome to create your own account! However, if
+              You are more than welcome to create your own account. However, if
               you do not want to, you can use the following account:
             </p>
             <p className="landing-page-p">Username: newuser</p>
