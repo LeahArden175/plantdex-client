@@ -17,6 +17,9 @@ password: newPassword2!
 
 -------------------------
 
+Screenshots:
+![picture](screenshots/landingpage.png)
+
 Technology:
 
 Front End
