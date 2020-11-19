@@ -18,7 +18,8 @@ password: newPassword2!
 -------------------------
 
 Screenshots:
-![picture](screenshots/landingpage2.jpeg)
+![picture](screenshots/landingpage.jpeg)
+![picture](screenshots/plantlist.jpeg)
 
 Technology:
 
