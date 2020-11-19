@@ -24,6 +24,9 @@ Screenshots:
 ![picture](screenshots/landingpage.jpeg)
 ![picture](screenshots/plantlist.jpeg)
 ![picture](screenshots/addplant.jpeg)
+
+<br/>
+
 ![picture](screenshots/plantitem.jpeg)
 ![picture](screenshots/newuser.jpeg)
 ![picture](screenshots/editplant.jpeg)
