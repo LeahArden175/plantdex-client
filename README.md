@@ -18,12 +18,15 @@ password: newPassword2!
 -------------------------
 
 Screenshots:
+
+<br/>
+
 ![picture](screenshots/landingpage.jpeg)
 ![picture](screenshots/plantlist.jpeg)
 ![picture](screenshots/addplant.jpeg)
 ![picture](screenshots/plantitem.jpeg)
 ![picture](screenshots/newuser.jpeg)
-![picture](screenshots/edit.jpeg)
+![picture](screenshots/editplant.jpeg)
 
 Technology:
 
