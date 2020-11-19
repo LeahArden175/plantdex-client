@@ -166,10 +166,10 @@ export default class AddPlantForm extends Component {
               onChange={(e) => this.daysBetweenChanged(e.target.value)}
             />
             <div className="add-plant-button-div">
-              <button className="submit-button" type="submit">
+              <button className="add-plant-submit-button" type="submit">
                 Submit
               </button>
-              <button className="submit-button">
+              <button className="add-plant-submit-button">
                 <Link to="/plant-list" className="cancel-link">
                   Cancel
                 </Link>

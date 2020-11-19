@@ -41,7 +41,7 @@
   justify-content: space-between;
   margin-top: 10px;
 }
-.submit-button {
+.add-plant-submit-button {
   box-shadow: inset 0px 0px 14px -3px #b5b8ae;
   background: linear-gradient(to bottom, #3c3d41 5%, #3c3d41 100%);
   background-color: #3c3d41;
@@ -115,7 +115,7 @@
     justify-content: space-between;
     margin-top: 10px;
   }
-  .submit-button {
+  .add-plant-submit-button {
     box-shadow: inset 0px 0px 14px -3px #b5b8ae;
     background: linear-gradient(to bottom, #3c3d41 5%, #3c3d41 100%);
     background-color: #3c3d41;
@@ -127,7 +127,7 @@
     font-family: "Merienda", cursive;
     font-size: 15px;
     font-weight: bold;
-    margin: auto;
+    margin: 30px;
     /* margin-left: 10px; */
     height: 35px;
     padding: 10px;
