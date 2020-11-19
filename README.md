@@ -18,7 +18,7 @@ password: newPassword2!
 -------------------------
 
 Screenshots:
-![picture](screenshots/landingpage.jpeg)
+![picture](screenshots/landingpage2.jpeg)
 
 Technology:
 
