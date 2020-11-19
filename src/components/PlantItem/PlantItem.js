@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import moment from "moment";
 import PropTypes from 'prop-types'
 import { Link } from "react-router-dom";
+import history from '../../history'
 import "./PlantItem.css";
 import Context from "../../Context";
 import config from "../../config";
@@ -26,7 +27,7 @@ export default class PlantItem extends Component {
       })
       .then(() => {
         this.context.deletePlant(plant_id);
-        this.props.history.push("/plant-list");
+        history.push("/plant-list");
       })
       .catch((error) => {
         console.error({ error });

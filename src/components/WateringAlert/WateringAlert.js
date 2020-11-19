@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 import "./WateringAlert.css";
 
 export default class WateringAlert extends Component {
@@ -13,20 +13,40 @@ export default class WateringAlert extends Component {
 
     if (diffDays < daysBetween) {
       return (
-        <p>I'm so happy! 😎</p>
-      ) 
-    } else if (diffDays > overDue){
+        <p>
+          I'm so happy!{" "}
+          <span role="img" aria-label="sunglasses face">
+            😎
+          </span>
+        </p>
+      );
+    } else if (diffDays > overDue) {
       return (
-        <p>😢It's been {diffDays} days!</p>
-      ) 
-    } else if (diffDays === daysBetween){
+        <p>
+          It's been {diffDays} days!{" "}
+          <span role="img" aria-label="crying face">
+            😢
+          </span>
+        </p>
+      );
+    } else if (diffDays === daysBetween) {
       return (
-        <p>Time to water me 💧</p>
-      )
+        <p>
+          Time to water me{" "}
+          <span role="img" aria-label="water drop">
+            💧
+          </span>
+        </p>
+      );
     } else {
       return (
-        <p>You are {diffDays} days late!</p>
-      ) 
+        <p>
+          You are {diffDays} days late!{" "}
+          <span role="img" aria-label="frowning face">
+            😟
+          </span>
+        </p>
+      );
     }
   }
 
@@ -35,11 +55,11 @@ export default class WateringAlert extends Component {
   }
 }
 
-WateringAlert.propTypes ={
+WateringAlert.propTypes = {
   alerts: PropTypes.arrayOf(
     PropTypes.shape({
       date_last_watered: PropTypes.instanceOf(Date),
       days_between_watering: PropTypes.instanceOf(Date),
     })
-  )
-}
+  ),
+};
