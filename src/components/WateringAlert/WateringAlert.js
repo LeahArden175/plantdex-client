@@ -1,14 +1,15 @@
 import React, { Component } from "react";
+import moment from 'moment'
 import PropTypes from "prop-types";
 import "./WateringAlert.css";
 
 export default class WateringAlert extends Component {
   wateringMessage() {
-    const lastWatered = new Date(this.props.plants.date_last_watered);
+    const lastWatered = moment.utc(this.props.plants.date_last_watered);
     const daysBetween = this.props.plants.days_between_watering;
-    const currentDate = new Date();
+    const currentDate = moment();
     const diffMilliseconds = currentDate - lastWatered;
-    const diffDays = Math.floor(diffMilliseconds / (24 * 60 * 60 * 1000));
+    const diffDays = Math.floor(diffMilliseconds / (24 * 60 * 60 * 1000)) - 1;
     const overDue = daysBetween + 30;
 
     if (diffDays < daysBetween) {

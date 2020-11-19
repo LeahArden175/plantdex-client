@@ -56,7 +56,7 @@ export default class UpdateForm extends Component {
         scientificname: findPlant.scientificname,
         nickname: findPlant.nickname,
         purchaseplace: findPlant.purchaseplace,
-        datepurchased: moment(findPlant.datepurchased).format("YYYY-MM-DD"),
+        datepurchased: moment.utc(findPlant.datepurchased).format("YYYY-MM-DD"),
         days_between_watering: findPlant.days_between_watering,
       });
     }
@@ -73,7 +73,7 @@ export default class UpdateForm extends Component {
         scientificname: findPlant.scientificname,
         nickname: findPlant.nickname,
         purchaseplace: findPlant.purchaseplace,
-        datepurchased: moment(findPlant.datepurchased).format("YYYY-MM-DD"),
+        datepurchased: moment.utc(findPlant.datepurchased).format("YYYY-MM-DD"),
         days_between_watering: findPlant.days_between_watering,
       });
     }
@@ -117,6 +117,12 @@ export default class UpdateForm extends Component {
     if (!findPlant) {
       return "loading";
     }
+
+    const formattedDatePurchased = moment.utc(this.state.datepurchased).format("YYYY-MM-DD")
+    console.log(formattedDatePurchased  )
+    console.log(this.state.datepurchased)
+
+      
     return (
       <div className="edit-plant-div">
         <ErrorBoundary>
@@ -132,10 +138,10 @@ export default class UpdateForm extends Component {
             <input
               className="edit-input"
               type="date"
-              value={this.state.datepurchased}
+              value={formattedDatePurchased}
               onChange={(e) => this.datepurchasedChanged(e.target.value)}
             />
-            <p className="edit-plant-p">Place of purchase:</p>
+            <p className="edit-plant-p">Acquired from:</p>
             <input
               className="edit-input"
               type="text"

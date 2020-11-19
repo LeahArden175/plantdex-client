@@ -43,8 +43,8 @@ export default class PlantItem extends Component {
       return "loading";
     }
 
-    const formattedDatePurchased = moment(findPlant.datepurchased).format("MMM Do YYYY");
-    const formattedDateWatered = moment(findPlant.date_last_watered).format("MMM Do YYYY")
+    const formattedDatePurchased = moment.utc(findPlant.datepurchased).format("MMM Do YYYY");
+    const formattedDateWatered = moment.utc(findPlant.date_last_watered).format("MMM Do YYYY")
 
     return (
       <div className="plant-item-div">
