@@ -7,8 +7,6 @@
   font-family: 'Merienda', cursive;
 
 }
-
-
 .login-info{
   display: flex;
   flex-direction: column;
@@ -20,19 +18,16 @@
   padding: 10px;
   border: solid;
 }
-
 .landing-page-info{
   font-size: 15px;
   margin: 15px;
   color: rgb(67, 58, 58);
 }
-
 .landing-page-p{
   font-size: 15px;
   color: white;
   margin: 7px;
 }
-
 .landing-page-button {
   width: 30%;
   margin: auto;

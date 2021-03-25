@@ -119,9 +119,6 @@ export default class UpdateForm extends Component {
     }
 
     const formattedDatePurchased = moment.utc(this.state.datepurchased).format("YYYY-MM-DD")
-    console.log(formattedDatePurchased  )
-    console.log(this.state.datepurchased)
-
       
     return (
       <div className="edit-plant-div">
